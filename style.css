@@ -15,7 +15,7 @@
 /* hero background image */
 .bgimage {
     height:100vh;
-    background: url('images/back_banner.png');
+    background: url('images/back2.png');
     background-size:cover;
     position:relative;
     opacity: 95%;
@@ -24,15 +24,15 @@
 }
 /* text css above hero image*/
 .hero_title {
-    padding-top: 10rem;
+    padding-top: 5rem;
     font-size: 4.5rem;
-    color: #000;
+    color: #ffffff;
     
     
 }
 .hero_desc {
     font-size: 1.5rem;
-    color: #000000cb;
+    color: #ffffff;
   
 }
 .hero_text {
@@ -49,11 +49,12 @@
 }
 
 .navbarDark {
-    background: #000;
+    background: #000000bb;
 }
 
+
 .nav-link {
-    color: #ecffe3;
+    color: #000000;
 }
 
  .social-icons {
