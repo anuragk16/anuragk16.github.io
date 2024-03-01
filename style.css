@@ -49,7 +49,7 @@
 }
 
 .navbarDark {
-    background: #000000bb;
+    background: #343a40;
 }
 
 
@@ -95,22 +95,12 @@
     border: 1px solid #008000;
 }
 
-#footer {
-    display: table;
+.footer {
+    background-color: #343a40;
+    color: #0a1008;
+    padding: 50px 0;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -148,9 +138,11 @@ body {
 
 
 /* Change hover settings for card elements within portfolio */
-#portfolio .card:hover .servicesIcon,
-#portfolio .card:hover .card-title {
+#portfolio .card:hover img,
+#portfolio .card:hover .card-body {
     color: #33ff33b9 !important; /* Change hover color to a bright yellow */
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.05);
 }
 
 /* Adjust other specific elements within the portfolio section as needed */
@@ -162,4 +154,5 @@ body {
     padding: 20px; /* Adjust padding as needed */
     border-radius: 10px; /* Optional: Add border radius for rounded corners */
 }
+
 
