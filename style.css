@@ -1,38 +1,30 @@
 /* spacing on all sections */
 * {
     user-select: none;
+    cursor: url("images/curser.png"),auto ;
 }
 
 .section {
     margin-top: 0rem;
     padding-top: 0rem;
-    
+    background-color: #393939aa; /* Set a slightly transparent dark background */
 }
+
 .section:last-of-type {
     padding-bottom: 4rem;
 }
-    
-/* hero background image */
-.bgimage {
-    height:100vh;
-    background: url('images/back2.png');
-    background-size:cover;
-    position:relative;
-    opacity: 95%;
-    padding: 0;
-    margin: 0;
-}
+
 /* text css above hero image*/
 .hero_title {
     padding-top: 5rem;
     font-size: 4.5rem;
-    color: #ffffff;
+    color: #e0e0e0;
     
     
 }
 .hero_desc {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #e0e0e0;
   
 }
 .hero_text {
@@ -41,7 +33,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #e0e0e0;
 }
 
 .image_about {
@@ -49,36 +41,69 @@
 }
 
 .navbarDark {
-    background: #343a40;
+    background: linear-gradient(to right, rgba(0, 255, 255, 0.4), rgba(255, 0, 255, 0.4)); /* Cyan to magenta gradient background with reduced opacity */
 }
 
-
+/* Navbar link color */
 .nav-link {
-    color: #000000;
+    color: transparent; /* Make link text transparent */
+    background: linear-gradient(to right, #00ffff, #ff00ff); /* Cyan to magenta gradient background for links */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Hide the text fill color */
 }
 
-.nav-link-c {
-    color: #ebfce3;
+
+.nav-link:hover {
+    background: linear-gradient(to right, rgba(255, 0, 255, 0.6), rgba(0, 255, 255, 0.6)); /* Magenta to cyan gradient background on hover */
+    -webkit-text-fill-color: #e0e0e0; /* Show the text fill color on hover */
+    cursor: url("images/pointer.png"),auto ;
 }
 
- .social-icons {
+.btn {
+    cursor: url("images/pointer.png"),auto ;
+    background-image: linear-gradient(to right, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
+}
+
+.btn:hover {
+    background-image: linear-gradient(to left, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+.social-icons {
     font-size: 36px;
-    cursor: pointer;
 }
 .fa-google:hover,
 .fa-youtube:hover,
 .fa-instagram:hover,
 .fa-linkedin:hover, 
 .fa-github:hover {
-    color: #008000;
+    background-image: linear-gradient(to left, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
+    cursor: url("images/pointer.png"),auto ;
+    transform: scale(1.1);
+    transition: 1s;
 }
 .fab {
-    color: #000000;
+    background-image: linear-gradient(to right, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
 }
 
 .servicesText.card {
-    height: 300px;
-    cursor: pointer;
+    height: 360px;
+    cursor: url("images/pointer.png"),auto ;
   }
 .servicesIcon {
     font-size: 36px;
@@ -88,59 +113,98 @@
 .card-title {
     text-align: center;
 }
-.card:hover .servicesIcon {
-    color: #008000;
-}
+
+
 .servicesText:hover {
-    border: 1px solid #008000;
+    border: 1px solid #00ffffdb;
 }
 
 .footer {
-    background-color: #343a40;
-    color: #0a1008;
+    background-color: #1a1a1ae6;
+    color: #00ffffb9;
     padding: 50px 0;
     text-align: center;
 }
 
 
+.text-center{
+    background-image: linear-gradient(to right, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
+}
 
-/* Set background color to a dark shade */
+
 body {
-    background-color: #1a1a1a;
-    color: #e0e0e0; /* Set text color to a light shade */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    padding-top: 100vh; /* Add padding to account for the video */
+}
+
+/* hero name hover effect */
+.highlight:hover {
+    background-image: linear-gradient(to right, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
+    transform: scale(1.2); /* Magnify on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+  
+}
+
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; /* Ensure the video covers the entire container */
 }
 
 /* Adjust the background opacity for sections */
-.section {
-    background-color: rgba(26, 26, 26, 0.9); /* Set a slightly transparent dark background */
-}
 
 /* Card hover color in skills */
 .card:hover .servicesIcon,
 .card:hover .card-title {
-    color: #33ff33b9 !important; /* Change hover color to a bright green */
+    background-image: linear-gradient(to right, #00ffff, #ff00ff); /* Apply gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; 
     
 }
 
 
 
-/* Portfolio section background color */
-
 /* Card body background color */
 #portfolio .card-body {
-    background-color: #111811; /* Light grey background color */
+    background-color: #0e0a0ff2; /* Light grey background color */
 }
 
 
 #portfolio .card {
     border: none; /* Remove border */
+    
 }
 
 
 /* Change hover settings for card elements within portfolio */
 #portfolio .card:hover img,
 #portfolio .card:hover .card-body {
-    color: #33ff33b9 !important; /* Change hover color to a bright yellow */
     transition: transform 0.5s ease-in-out;
     transform: scale(1.05);
 }
@@ -150,9 +214,27 @@ body {
 
 /* Light grey background for skills section containers */
 .skills-container {
-    background-color: #111811a3; /* Light grey color */
+    background-color: #161118a3; /* Light grey color */
     padding: 20px; /* Adjust padding as needed */
     border-radius: 10px; /* Optional: Add border radius for rounded corners */
 }
 
+
+
+/* Width and color of scrollbar track */
+::-webkit-scrollbar {
+    width: 12px; /* Adjust the width as needed */
+    background-color: #ff00ff22; /* Background color of the scrollbar track (magenta with some opacity) */
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #00ffff; /* Color of the scrollbar handle (cyan) */
+    border-radius: 6px; /* Rounded corners of the scrollbar handle */
+}
+
+/* Change color on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff00ff; /* Change color of the scrollbar handle on hover (magenta) */
+}
 
