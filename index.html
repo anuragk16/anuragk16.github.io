@@ -1,363 +1,756 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-  <title>Portfolio - anurag</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
-  
-
-  <!-- linking css file -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/logo.png" type="image/icon type">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag Kumawat | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
-
 <body>
-    <!-- navbar -->
-    <!-- https://getbootstrap.com/docs/5.2/components/navbar/ -->
-    <!-- Add class of bg-light to nav element -->
-    
-
-    <!-- Include your HTML content here -->
-    <div class="video-container">
-        <video id="bg-video" preload="auto" autoplay loop muted>
-            <source src="videos/background.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <nav class="navbar navbar-expand-lg fixed-top navbarScroll navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#"> <img src="images/logo.png" alt="AK" style="width: 60px; height:auto;"> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                   <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Projects</a>
-                    </li>
-                    
-                <!--
-                  <li class="nav-item">
-                        <a class="nav-link" href="#footer">Contact</a>
-                    </li> -->
-                </ul>
-                
-            </div>
+    <header>
+        <div class="left-section">
+            <img src="assets/logo.png" alt="Logo" class="nav-logo">
         </div>
-    </nav>
-    
-    <!-- main banner -->
-    <!-- https://getbootstrap.com/docs/5.2/layout/containers/ -->
-    <!-- https://getbootstrap.com/docs/5.2/layout/grid/ -->
-    <section class="container-fluid section bgimage" id="home">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hero_text">
-                <h2 class="hero_title">   <span class="highlight"> Hi,</span>  <span class="highlight">it's </span>  <span class="highlight">me</span> <span class="highlight">Anurag</span>    </h2>
-                <p class="hero_desc">I am a python programmer with the skills of automation, software developer, <br> django web framwork, telegram API.</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-    <!-- About Section -->
-<section class="container mt-4 pt-4 section" id="about">
-    <div class="container">
-        <h1 class="text-center">About Me</h1>
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <p>
-                    I am a diligent engineering student specializing in Computer Science. With a strong focus on software development, I have honed my expertise in Python programming. My skill set encompasses a wide range of proficiencies, including automation using PyAutoGUI, creating user-friendly GUI applications with Tkinter and Turtle, manipulating data efficiently using NumPy and Pandas, integrating Python with the Telegram Bot API, and employing Python for web scripting.
-                </p>
-                <p>
-                    Furthermore, I possess adeptness in web development. I am well-versed in HTML5, allowing me to develop basic websites, design web forms, and utilize nested tags effectively. Proficiency in CSS3 enables me to craft visually appealing interfaces, incorporating 2D animations, seamless transitions, and more. Additionally, I have a solid foundation in JavaScript, which enables me to implement essential web functionalities.
-                </p>
-                <p>
-                    Beyond Python and web development, my skill set extends to encompass other programming languages. I am proficient in C and C++, granting me versatility in various programming paradigms. I also have experience working with MySQL, facilitating efficient data management and manipulation. Additionally, I possess graphic designing skills, allowing me to create visually captivating logos, banners, posters, and other graphical assets. Moreover, my proficiency in MS Excel equips me with effective data organization and management capabilities.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-    
-    <!-- 
-    <section class="container mt-4 pt-4 section" id="about">
-        <h1 class="text-center">About Me</h1>
-        
-        <div class="row mt-4">
-            
-            <div class="col-lg-6">
-                <img src="images/about.png" class="image_about" alt="">
-            </div>  
-
-            <div class="col-lg-6">
-                <p style="font-size:large; text-align: center; margin-left: auto; margin-right: auto;"> 
-                    I am a diligent engineering student specializing in Computer Science. With a strong focus on software development, I have honed my expertise in Python programming. My skill set encompasses a wide range of proficiencies, including automation using pyautogui, creating user-friendly GUI applications with tkinter and turtle, manipulating data efficiently using Numpy and Pandas, integrating Python with the Telegram bot API, and employing Python for web scripting.
-                </p><p style="font-size:large; text-align: center; margin-left: auto; margin-right: auto;">
-Furthermore, I possess adeptness in web development. I am well-versed in HTML5, allowing me to develop basic websites, design web forms, and utilize nested tags effectively. Proficiency in CSS3 enables me to craft visually appealing interfaces, incorporating 2D animations, seamless transitions, and more. Additionally, I have a solid foundation in JavaScript, which enables me to implement essential web functionalities.
-    </p><p style="font-size:large; text-align: center; margin-left: auto; margin-right: auto;">
-Beyond Python and web development, my skill set extends to encompass other programming languages. I am proficient in C and C++, granting me versatility in various programming paradigms. I also have experience working with MySQL, facilitating efficient data management and manipulation. Additionally, I possess graphic designing skills, allowing me to create visually captivating logos, banners, posters, and other graphical assets. Moreover, my proficiency in MS Excel equips me with effective data organization and management capabilities.
-                </p>
-                
-                
-            </div>
-        </div>
-    </section>
-           --> 
-
-
-
-
-           <br><br> <br><br> <br><br> <br><br> <br><br><br><br>
-    <!-- services section-->
-    <!-- https://getbootstrap.com/docs/5.2/components/card/#about -->
-    <section class="container section" id="skills">
-        <br>
-        <h1 class="text-center">Skills</h1>
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class="fas servicesIcon fa-calculator"></i>
-                        <h4 class="card-title mt-3">Software Development</h4>
-                        <p class="card-text mt-3">As a skilled software developer, I excel in creating robust, scalable, and efficient software solutions to meet diverse business needs. I ensure high-quality code development and adhere to best practices throughout the software development lifecycle.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class='fas servicesIcon fa-magic'></i>
-                        <h4 class="card-title mt-3">Automation</h4>
-                        <p class="card-text mt-3">With expertise in automation tools and frameworks like Selenium and PyAutoGUI, I automate repetitive tasks, streamline workflows, and increase productivity. From GUI automation, I design and implement efficient automation solutions tailored to specific requirements.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class='far servicesIcon fa-check-circle'></i>
-                        <h4 class="card-title mt-3">Problem Solving</h4>
-                        <p class="card-text mt-3">I possess strong problem-solving skills that have proven invaluable in both my personal and professional life.
-                            I have a knack for identifying issues, analyzing their root causes, and generating effective solutions.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class='fas servicesIcon fa-cogs'></i>
-                        <h4 class="card-title mt-3">Android Development</h4>
-                        <p class="card-text mt-3">With experience in Android app development using Kotlin, I create intuitive and engaging mobile applications, I develop user-centric apps with features like calculators, message senders, and login pages, ensuring seamless functionality across various Android devices.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class='fas servicesIcon fa-shield-alt'></i>
-                        <h4 class="card-title mt-3">Django Development</h4>
-                        <p class="card-text mt-3">Specializing in Django, a powerful Python web framework, I develop dynamic and feature-rich web applications with ease. From designing RESTful APIs to implementing authentication and authorization systems.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-
-            <div class="col-lg-4 mt-4">
-                <div class="card servicesText skills-container">
-                    <div class="card-body">
-                        <i class='fas servicesIcon fa-wrench'></i>
-                        <h4 class="card-title mt-3">Telegram API</h4>
-                        <p class="card-text mt-3">Specializing in Telegram Bot API in Python, I create interactive and automated bots for various purposes, including customer support, content delivery, and task automation.
-                        </p>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </section>  
-<br><br> <br><br> <br><br> <br><br> <br><br><br><br>
-    <!-- project section-->
-    <section class="section" id="portfolio">
-        <div class="container mt-3">
-            <br>
-            <h1 class="text-center">Projects</h1>
-        <br>
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images/portfolioImage1.jpeg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Assistant</h4>
-                            <p class="card-text">    <!--  Write description of project  -->    </p> 
-                            <div class="text-center">
-                                <a href="https://www.youtube.com/watch?v=EDq0Zly0l_A" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images\project.png" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">AI POWERED LEARNING APP</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/AI-POWERED-LEARNING-APP_-Pixel-pirates" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images/portfolioImage3.jpeg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Calculator</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/calculator-GUI" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images\project.png" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Web animations</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/3-dot-web-animation" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images/portfolioImage1.jpeg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Clock</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/Clock" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images\project.png" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Phone book</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/Phone-book-GUI" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             
-
-            <div class="row">
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images\project.png" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Student management system</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/Student-management-system" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images/portfolioImage1.jpeg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Portfolio website</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card">
-                        <img class="card-img-top" src="images\project.png" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Resume parser</h4>
-                            <p class="card-text">   <!--  Write description of project  -->  </p>
-                            <div class="text-center">
-                                <a href="https://github.com/anuragk16/Resume-parser" target="_blank" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-    </section>
-            </div>
-    </section>
-
-    
- <br> <br> <br>
-
-    <!-- Footer Section -->
-<footer class="footer">
-    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+            </ul>
+        </nav>
         <div class="social-icons">
-            <a href="mailto:anuragkumawat1603@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
-            <a href="https://www.youtube.com/channel/UCKO4nOXb1ZpmuR8br5fJWBQ" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/_.anurag._.16._/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/anuragk16" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="old_portfolio/index.html" target="_blank" title="Old Portfolio"><i class="fas fa-folder-open"></i></a>
+            <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/anuragk16" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:anuragkumawat1603@gmail.com" target="_blank" title="Mail"><i class="fab fa-google"></i></a>
         </div>
-        <p>&copy; 2024 Anurag. All rights reserved.</p>
-    </div>
-</footer>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="background-container">
+                <div class="overlay">
+                    <h1 class="name">Anurag Kumawat</h1>
+                    <div class="hero-content">
+                        <h2>I AM Python Developer</h2>
+                        <p>Data Science and Automation Developer</p>
+                        <p>A skilled Python and Automation Developer with expertise in streamlining processes through efficient scripting, API integration, and data analysis. Passionate about building innovative solutions to solve real-world challenges.</p>
+                        <button class="cta-button" onclick="window.location.href='https://drive.google.com/file/d/1C3kgnHrbAAV-cBcfs7J2ZKeXa-0p1JHw/view?usp=drive_link'">Resume</button> <span style="padding-left: 5px;"></span><button class="cta-button" onclick="window.location.href='https://www.linkedin.com/in/anurag-kumawat-71b84721b/'">LinkedIn</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/about-img.png" alt="Anurag Kumawat">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I am a Python and Automation Developer with a passion for solving complex problems.</p>
+                    <p>Skilled in creating efficient workflows using APIs, data analysis, and process automation.</p>
+                    <p>Experienced in building intuitive GUIs and scalable applications.</p>
+                    <p>Proficient in web automation, machine learning, and database management.</p>
+                    <p>I hold a B.Tech in Computer Science and Engineering from Government Engineering College, Ajmer.</p>
+                    <p>Dedicated to writing clean, maintainable code and delivering innovative solutions.</p>
+                    <p>Always eager to learn and explore emerging technologies to enhance my skills.</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="skills-content">
+                <h2 class="section-title text-center">My Skills</h2>
+                
+                <!-- Tools & Technologies Section -->
+                <h3 class="text-center">Tools & Technologies</h3>
+                <div class="skills-category tools">
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-github"></i>
+                            <h4>GitHub</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-android"></i>
+                            <h4>Android Studio</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fa-brands fa-figma"></i>
+                            <h4>Figma</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h4>MySQL</h4>
+                            <p class="skill-subtitle">Workbench & CLI</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>VS Code</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-google"></i>
+                            <h4>Google Colab</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-chart-bar"></i>
+                            <h4>Tableau</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h4>Unity</h4>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-python"></i>
+                            <h4>Jupyter</h4>
+                            <p class="skill-subtitle">Notebook & Lab</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-stream"></i>
+                            <h4>Streamlit</h4>
+                            <p class="skill-subtitle">Python Web Apps</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming Skills Section -->
+                <h3 class="text-center">Programming Skills</h3>
+                <div class="programming-skills">
+                    <div class="skills-grid">
+                        <!-- Languages -->
+                        <div class="skill-category-card">
+                            <h4>Languages</h4>
+                            <div class="skill-items">
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>Kotlin</span>
+                                <span>HTML/CSS</span>
+                                <span>C# (Unity)</span>
+                            </div>
+                        </div>
+
+                        <!-- Automation -->
+                        <div class="skill-category-card">
+                            <h4>Automation</h4>
+                            <div class="skill-items">
+                                <span>PyAutoGUI</span>
+                                <span>Selenium</span>
+                            </div>
+                        </div>
+
+                        <!-- GUI Development -->
+                        <div class="skill-category-card">
+                            <h4>GUI Development</h4>
+                            <div class="skill-items">
+                                <span>Tkinter</span>
+                                <span>PyQt5</span>
+                                <span>Pygame</span>
+                            </div>
+                        </div>
+
+                        <!-- APIs -->
+                        <div class="skill-category-card">
+                            <h4>APIs</h4>
+                            <div class="skill-items">
+                                <span>Telegram Bot API</span>
+                            </div>
+                        </div>
+
+                        <!-- Data Analysis -->
+                        <div class="skill-category-card">
+                            <h4>Data Analysis</h4>
+                            <div class="skill-items">
+                                <span>NumPy</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                        </div>
+
+                        <!-- Databases -->
+                        <div class="skill-category-card">
+                            <h4>Databases</h4>
+                            <div class="skill-items">
+                                <span>MySQL with Python</span>
+                            </div>
+                        </div>
+
+                        <!-- Web Development -->
+                        <div class="skill-category-card">
+                            <h4>Web Development</h4>
+                            <div class="skill-items">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                                <span>Streamlit</span>
+                            </div>
+                        </div>
+
+                        <!-- Machine Learning -->
+                        <div class="skill-category-card">
+                            <h4>Machine Learning</h4>
+                            <div class="skill-items">
+                                <span>Scikit-learn</span>
+                                <span>OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio-content">
+                <h2 class="section-title">My Portfolio</h2>
+                
+                <!-- Advanced Projects -->
+                <div class="portfolio-category">
+                    <h3>Advanced Projects</h3>
+                    
+                    <div class="portfolio-cards">
+                        <!-- Advanced Project 1 -->
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/british airline.png" alt="british airline">
+                            </div>
+                            <div class="card-content">
+                                <h4>Airline Customer Feedback Analysis and Booking Prediction</h4>
+                                <div class="project-tools">
+                                    <span>Web Scripting</span>
+                                    <span>Machine Learning</span>
+                                    <span>Data Visualization</span>
+                                    <span>Python</span>
+
+                                </div>
+                                <p class="project-description">
+                                    A data-driven project analyzing customer reviews for sentiment insights and predicting flight bookings to enhance business strategies.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/airline-customer-analysis" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Advanced Project 2 -->
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/Mice.png" alt="classification of mice">
+                            </div>
+                            <div class="card-content">
+                                <h4>Mice Protein Classification</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Machine Learning</span>
+                                    <span>Data Analysis</span>
+                                    <span>Feature Selection</span>
+                                    <Span>Model Evaluation</Span>
+                                    <span>EDA</span>
+
+                                </div>
+                                <p class="project-description">
+                                    This project explores the impacts of genotype, behavior, and treatment on learning and by analyzing protein expression data from mice and classify them in 7 different classes.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/mice-protein-classification" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets\project_img\SMS.png" alt="Student management system">
+                            </div>
+                            <div class="card-content">
+                                <h4>Student Management System</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Tkinter</span>
+                                    <span>Numpy</span>
+                                    <span>Software Development</span>
+                                    <span>Pandas</span>
+                                </div>
+                                <p class="project-description">
+                                    This is a python program to manage the students data. It have feature like automatic roll number assignment, Deleting, Upadating, Adding, and Searching students from the data.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Student-management-system?tab=readme-ov-file" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/AI_learning.png" alt="AI powered learning app">
+                            </div>
+                            <div class="card-content">
+                                <h4>AI POWERED LEARNING APP</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                    <span>OpenCV</span>
+                                    <span>Numpy</span>
+                                </div>
+                                <p class="project-description">
+                                    Developed an AI-powered learning app featuring hand gesture and body posture detection, interactive math quizzes, a storytelling feature, and live topic search, enhancing the learning experience.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/AI-POWERED-LEARNING-APP_-Pixel-pirates" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Intermediate Projects -->
+                <div class="portfolio-category">
+                    <h3>Intermediate Projects</h3>
+                    <div class="portfolio-cards">
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/mystic.png" alt="Mystic Survival Realms">
+                            </div>
+                            <div class="card-content">
+                                <h4>Mystic Survival Realms</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Pygame</span>
+                                    <span>Game Theory</span>
+                                </div>
+                                <p class="project-description">
+                                    Mystic Survival Realms is a 2D action-adventure game built using Python and Pygame. The game features interactive entities, engaging gameplay mechanics, and dynamic exploration.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Mystic-Survival-Realms" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/melvin.png" alt="Melvin">
+                            </div>
+                            <div class="card-content">
+                                <h4>Melvin - personal telegram bot</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Python Telegram API</span>
+                                    <span>PyAutoGUI</span>
+                                </div>
+                                <p class="project-description">
+                                    A Telegram bot for remote PC control, letting you open websites, run CMD scripts, switch windows, view active window titles, and manage power options like restart and shutdown.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Melvin---personal-telegram-bot" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/Calculator.png" alt="Calculator">
+                            </div>
+                            <div class="card-content">
+                                <h4>Calculator GUI</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>PyQt5</span>
+                                    <span>Tkinter</span>
+                                    
+                                    
+                                </div>
+                                <p class="project-description">
+                                    I created a Calculator GUI that follows the BODMAS rule for accurate calculations, using a custom string manipulation algorithm. Built in both PyQt5 and Tkinter, it showcases different interface designs with the same calculation logic.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/calculator-GUI" target="_blank"><i class="fab fa-github"></i> Code (Tkinter)</a>
+                                    <a href="https://github.com/anuragk16/Calculator-GUI-with-pyqt5" target="_blank"><i class="fab fa-github"></i> Code (PyQt5)</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/Unity.png" alt="Unity project">
+                            </div>
+                            <div class="card-content">
+                                <h4>Unity Essentials project</h4>
+                                <div class="project-tools">
+                                    <span>Unity Editor</span>
+                                    <span>C#</span>
+                                    <span>Game Development</span>
+                                </div>
+                                <p class="project-description">
+                                    I’ve developed skills in Unity across UI design, 2D art, scripting, audio, GameObjects, and lighting, enabling me to create interactive, responsive scenes and effectively manage project components.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://learn.unity.com/submission/667fa796edbc2a37c0e0e1a1" target="_blank"><i class="fab fa-unity"></i> Project Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/portfolio.png" alt="Portfolio Website">
+                            </div>
+                            <div class="card-content">
+                                <h4>Portfolio Website</h4>
+                                <div class="project-tools">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>Web Development</span>
+                                </div>
+                                <p class="project-description">
+                                    A portfolio website showcasing my growth, featuring both my latest design and an earlier 2022 version to highlight my evolving skills in web development and design.
+                                </p>
+                                <div class="project-links">
+                                    <a href="old_portfolio/index.html" target="_blank"><i class="fa fa-globe"></i>Old Portfolio</a>
+                                    <a href="#"><i class="fa fa-globe"></i>Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        
+                        
+                    </div>
+                </div>
+        
+                <!-- Basic Projects -->
+                <div class="portfolio-category">
+                    <h3>Basic Projects</h3>
+
+
+                    
+                    <div class="portfolio-cards">
+                        <!-- Basic Project 1 -->
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/assistant.png" alt="Assistant">
+                            </div>
+                            <div class="card-content">
+                                <h4>Assistant</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Tkinter</span>
+                                    <span>Automation</span>
+                                    
+                                </div>
+                                <p class="project-description">
+                                    Created a Python-based assistant that streamlines tasks by searching text on Google or YouTube, reading typed text aloud, and controlling music playback with functions like next, previous, pause, and resume. An innovative tool to enhance productivity and entertainment seamlessly
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://www.youtube.com/watch?v=EDq0Zly0l_A" target="_blank"><i class="fab fa-youtube"></i> Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/textstovoice.png" alt="Text To Voice">
+                            </div>
+                            <div class="card-content">
+                                <h4>Professional Text-to-Speech Application</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Tkinter</span>
+                                    
+                                    
+                                </div>
+                                <p class="project-description">
+                                    This is a professional text-to-speech application developed using Python and Tkinter. It allows users to convert text to speech, save the audio, and play it back using pygame.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Text_To_Speech" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+                        
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/phonebook.png" alt="Phone book">
+                            </div>
+                            <div class="card-content">
+                                <h4>Phone Book</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Tkinter</span>
+                                    <span>Numpy</span>
+                                    
+                                    
+                                </div>
+                                <p class="project-description">
+                                    Developed a Phone Book System for Windows that allows users to efficiently add, delete, update, and search contacts. A user-friendly application designed to simplify contact management.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Phone-book-GUI" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                    <a href="https://www.youtube.com/watch?v=cB_rS1YN-mU" target="_blank"><i class="fab fa-youtube"></i> Video</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="portfolio-card">
+                            <div class="card-image">
+                                <img src="assets/project_img/clock.png" alt="Wall Clock">
+                            </div>
+                            <div class="card-content">
+                                <h4>Digital Wall Clock</h4>
+                                <div class="project-tools">
+                                    <span>Python</span>
+                                    <span>Turtle</span>
+                                    
+                                    
+                                </div>
+                                <p class="project-description">
+                                    Created a three-hand clock for Windows using Python's threading to run hour, minute, and second hand functions simultaneously. Designed with Turtle graphics for an interactive and visually appealing GUI.
+                                </p>
+                                <div class="project-links">
+                                    <a href="https://github.com/anuragk16/Clock" target="_blank"><i class="fab fa-github"></i> Code</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <div class="experience-content">
+                <h2 class="section-title">Experience</h2>
+                
+                <!-- Timeline Experience -->
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">20 March - 23 March</div>
+                            <h3>IT-Day Hackathon</h3>
+                            <h4>Rajasthan IT-Day Hackathon, Jaipur</h4>
+                            <p>Developed an AI-powered learning app featuring hand gesture and body posture detection, interactive math
+                                quizzes, a storytelling feature, and live topic search, enhancing the learning experience.</p>
+                            <div class="experience-skills">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>Scikit-learn</span>
+                                <span>Tkinter</span>
+                                <span>Team Collaboration</span>
+                            </div>
+                            <div class="certificate-link">
+                                <a href="https://drive.google.com/file/d/1xaFVtmP-651Zd8seAC9LtVpeYicacqcP/view?usp=sharing" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Experience Item -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">June 2023 - July 2023</div>
+                            <h3>Python Developer Intern</h3>
+                            <h4>TechnoHacks Edutech Pvt. Ltd, Maharashtra</h4>
+                            <p>As a Python Developer Intern at TechnoHacks Edutech, I worked on a variety of impactful projects, including a Resume Parser, Stone-Paper-Scissors game, and Language Translator. This experience allowed me to strengthen my Python development skills, explore various libraries, and apply programming concepts to create practical and efficient solutions.</p>
+                            <div class="experience-skills">
+                                <span>Python</span>
+                                <span>Tkinter</span>
+                                <span>project completion</span>
+                                
+                            </div>
+                            <div class="certificate-link">
+                                <a href="https://drive.google.com/file/d/1G24M7h4i2fDR8LahQYDBNT5zIG5VItTn/view?usp=sharing" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">June 2024 - August 2024</div>
+                            <h3>Data Science Intern</h3>
+                            <h4>EVOASTRA VENTURES PVT LTD, Hyderabad</h4>
+                            <p>As a Data Science Intern at EVOASTRA VENTURES PVT LTD, I handled data collection, cleaning, and
+                                analysis to generate actionable insights. I worked on web scraping, data preparation, and developed
+                                machine learning models to predict outcomes. I also created visualizations in Tableau, supporting datadriven
+                                decisions and AI/ML initiatives.</p>
+                            <div class="experience-skills">
+                                <span>Machine Learning</span>
+                                <span>Data Analysis</span>
+                                <span>Tableau</span>
+                                <span>Python</span>
+                                <span>Web Scraping</span>
+                                <span>Data Visualization</span>
+                                <span>Google Colab</span>
+                                <span>Team Collaboration</span>
+
+                            </div>
+                            <div class="certificate-link">
+                                <a href="https://drive.google.com/file/d/1Qt_k10cHNCeyvkIpj3zOLnmSuxJVwzwY/view?usp=sharing" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">August 2024 - September 2024</div>
+                            <h3>Machine Learning Intern</h3>
+                            <h4>Atharvo India Pvt. Ltd, Bengaluru</h4>
+                            <p>During my Machine Learning internship at Atharvo, I was introduced to the fundamentals of ML, with daily 2-hour sessions covering key concepts and techniques. By the end of the internship, I successfully developed a handwritten digit identifier, applying my knowledge to create a practical and accurate model.</p>
+                            <div class="experience-skills">
+                                <span>Supervised Learning</span>
+                                <span>Classification Algorithms</span>
+                                <span>Python</span>
+                                <span>Jupyter</span>
+                            </div>
+                            <div class="certificate-link">
+                                <a href="https://drive.google.com/file/d/1lbu85CBay-rAGoGe45wERrE602BmvPUj/view?usp=sharing" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">October 2024</div>
+                            <h3>Data Science Job Simulation</h3>
+                            <h4>Forage | British Airways</h4>
+                            <p>During a 1-week job simulation from Forage for British Airways, I worked on two key tasks. First, I scraped customer reviews from the website and performed sentiment analysis to understand customer feedback. Second, I analyzed ticket booking data from a CSV to identify factors contributing to higher bookings, helping in decision-making for optimizing operations.</p>
+                            <div class="experience-skills">
+                                <span>Tableau</span>
+                                <span>Data Visualization</span>
+                                <span>Data Analysis</span>
+                                <span>Web Scraping</span>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="certificate-link">
+                                <a href="https://drive.google.com/file/d/1bENfQzwsrOs2xO8xNrk9Z6_g11mw8aq0/view?usp=sharing" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Experience Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">October - Present</div>
+                            <h3>Python Developer Intern</h3>
+                            <h4>Nagarjuna tech Solutions, Bengaluru</h4>
+                            <p>During my internship at Nagarjuna Tech Solutions, a startup, I successfully integrated Flask APIs with SQL databases to manage and store data efficiently. Additionally, I developed a Resume Maker using the free Gemini API, linking it with the SQL database to streamline resume generation and storage processes.</p>
+                            <div class="experience-skills">
+                                <span>Python</span>
+                                <span>Data Analysis</span>
+                                <span>Flask</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="certificate-link">
+                                <a href="#" target="_blank"><i class="fas fa-certificate"></i> View Certificate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates Section -->
+                <div class="certificates-section">
+                    <h3>Certifications</h3>
+                    <div class="certificates-wrapper">
+                        <button class="scroll-btn left certif" id="scrollLeft">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="certificates-container">
+                            <div class="certificate-card">
+                                <img src="https://drive.google.com/thumbnail?id=1JrWeuZtNGeda5V9G8YeFd646y7Ozt2vv" alt="DEBBUGING EVENT">
+                                <div class="certificate-content">
+                                    <h4>DEBBUGING EVENT</h4>
+                                    <p>Engineering College, Ajmer</p>
+                                    <a href="https://drive.google.com/file/d/1JrWeuZtNGeda5V9G8YeFd646y7Ozt2vv/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                                </div>
+                            </div>
+
+                            <div class="certificate-card">
+                                <img src="https://drive.google.com/thumbnail?id=1WovaO9VAKzZhEjKgTNVlnWvcjxqPu0Gv" alt="Dharmachakra">
+                                <div class="certificate-content">
+                                    <h4>DHARMACHAKRA</h4>
+                                    <p>Engineering College, Ajmer</p>
+                                    <a href="https://drive.google.com/file/d/1WovaO9VAKzZhEjKgTNVlnWvcjxqPu0Gv/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                                </div>
+                            </div>
+
+                            <div class="certificate-card">
+                                <img src="https://drive.google.com/file/d/1w1voTePTPj2Gpmw-DZZFLG5CbIFsOZxB" alt="Dharmachakra">
+                                <div class="certificate-content">
+                                    <h4>Python Essentials 1</h4>
+                                    <p>Cisco</p>
+                                    <a href="https://drive.google.com/file/d/1w1voTePTPj2Gpmw-DZZFLG5CbIFsOZxB/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="scroll-btn right certif" id="scrollRight">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anurag Kumawat</h3>
+                    <p class="footer-description">
+                        Python Developer specializing in Data Science and Machine Learning. 
+                        Always eager to take on new challenges and collaborate on innovative projects.
+                    </p>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> anuragkumawat1603@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +91 7877022305</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Ajmer, Rajasthan</p>
+                    </div>
+                </div>
     
-    <!-- load javascript after loading all html content -->
-    <script src="script/script.js"></script>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/anuragk16" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:anuragkumawat1603@gmail.com" target="_blank" title="Email">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anurag Kumawat. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> by Anurag</p>
+            </div>
+        </footer>
+    </main>
 
+    <script src="script.js"></script>
+
+    
 </body>
-
 </html>
