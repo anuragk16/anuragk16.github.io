@@ -28,6 +28,15 @@
   <script src="js/theme.js" defer></script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2.5 9h3v12h-3zM9 9h2.9v1.7h.04c.4-.76 1.38-1.9 3.06-1.9 3.27 0 3.5 2.15 3.5 4.95V21h-3v-6.3c0-1.5-.03-3.4-2.07-3.4-2.07 0-2.43 1.6-2.43 3.3V21H9z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l5 5v15H6z M14 2v5h5 M9 13h7 M9 17h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14 M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-peak" viewBox="0 0 20 14"><path d="M2 12 L10 2 L18 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-nav">
@@ -57,6 +66,248 @@
   </header>
 
   <main id="main">
+
+    <!-- ===== 1. Hero ===== -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Software Engineer · ColoredCow</p>
+          <h1 class="hero-title">I build software from zero and take it to real users.</h1>
+          <p class="hero-lede">I've built three production systems from scratch and launched them. Today I lead one of them end to end — from what we build next to how it runs on the server.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">See my work <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="https://drive.google.com/file/d/1C3kgnHrbAAV-cBcfs7J2ZKeXa-0p1JHw/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
+          </div>
+          <ul class="social" aria-label="Find me online">
+            <li><a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/anuragk16" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="mailto:anuragkumawat1603@gmail.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+        <picture class="hero-photo">
+          <img src="assets/about-img.png" alt="Anurag Kumawat" width="480" height="480">
+        </picture>
+      </div>
+    </section>
+
+    <!-- ===== 2. Proof strip ===== -->
+    <section id="proof" class="proof" aria-label="At a glance">
+      <ul class="container proof-list">
+        <li><span class="proof-big"><span class="proof-num" data-count-to="3">3</span></span><span class="proof-label">systems built from scratch</span></li>
+        <li><span class="proof-big">All live</span><span class="proof-label">with real users, today</span></li>
+        <li><span class="proof-big">Project Lead</span><span class="proof-label">on a national platform</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== 3. Work ===== -->
+    <section id="work" class="section">
+      <div class="container">
+        <p class="eyebrow">Work</p>
+        <h2>Problems I solved</h2>
+        <p class="section-intro muted">Real systems, built from scratch and used every day. Client names are kept private.</p>
+
+        <div class="projects">
+          <article class="project project-main reveal" id="project-cert" data-project="cert">
+            <p class="project-meta">For an industry body · Django REST · Next.js · PostgreSQL</p>
+            <h3>National certification platform</h3>
+            <p class="project-sub">Project Lead — I own the project and run it end to end.</p>
+            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-cert-details">How it went</button>
+            <div class="project-details" id="project-cert-details">
+              <p><strong>Problem</strong> An industry body needed a digital system to certify businesses. There was no spec and no existing system to copy.</p>
+              <p><strong>What I did</strong> I was part of the team that built it from scratch, from day one. Today I lead it: product direction, requirements, development, releases and servers. I run the work with an AI-agent workflow — planning and building agents, auto-generated tests and release checklists.</p>
+              <p><strong>Result</strong> It went live in about two months. Hundreds of businesses use it.</p>
+            </div>
+          </article>
+
+          <article class="project reveal" id="project-field" data-project="field">
+            <p class="project-meta">For an education non-profit · React Native · React</p>
+            <h3>Field-operations platform</h3>
+            <p class="project-sub">Mobile app and bulk data import</p>
+            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-field-details">How it went</button>
+            <div class="project-details" id="project-field-details">
+              <p><strong>Problem</strong> Field teams needed a mobile app. The system also needed a reliable way to bring in large amounts of existing data.</p>
+              <p><strong>What I did</strong> I built the React Native mobile app, with AI features, and worked on the React web app. I built the bulk data import system from scratch.</p>
+              <p><strong>Result</strong> The import system runs reliably in production with real data.</p>
+            </div>
+          </article>
+
+          <article class="project reveal" id="project-lms" data-project="lms">
+            <p class="project-meta">For a health non-profit · Frappe (open source)</p>
+            <h3>Health-worker training platform</h3>
+            <p class="project-sub">Extended an open-source learning platform</p>
+            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-lms-details">How it went</button>
+            <div class="project-details" id="project-lms-details">
+              <p><strong>Problem</strong> Health workers needed a learning platform, without building one from zero.</p>
+              <p><strong>What I did</strong> I took an open-source LMS built on Frappe, then customised and extended it to fit their training.</p>
+              <p><strong>Result</strong> It shipped on top of an existing system. I learned to work well inside someone else's codebase.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Skills ===== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2>What my work proves</h2>
+        <p class="section-intro muted">Point at a skill to see where I used it.</p>
+        <ul class="skills">
+          <li><button class="skill" type="button" data-projects="cert">
+            <span class="skill-name">Zero to production</span>
+            <span class="skill-line">Taking a new system from an empty repo to real users.</span>
+            <span class="tags"><span>Django REST</span><span>Next.js</span><span>PostgreSQL</span></span>
+          </button></li>
+          <li><button class="skill" type="button" data-projects="cert">
+            <span class="skill-name">Owning a product end to end</span>
+            <span class="skill-line">Requirements, planning, releases and servers — not just tickets.</span>
+            <span class="tags"><span>Requirements</span><span>Releases</span><span>Servers</span></span>
+          </button></li>
+          <li><button class="skill" type="button" data-projects="cert field">
+            <span class="skill-name">Data-heavy backends</span>
+            <span class="skill-line">Systems that hold up with large, messy, real data.</span>
+            <span class="tags"><span>Python</span><span>Django</span><span>Bulk import</span></span>
+          </button></li>
+          <li><button class="skill" type="button" data-projects="lms">
+            <span class="skill-name">Extending existing code</span>
+            <span class="skill-line">Shipping inside a codebase I didn't write.</span>
+            <span class="tags"><span>Frappe</span><span>Open source</span></span>
+          </button></li>
+          <li><button class="skill" type="button" data-projects="field">
+            <span class="skill-name">Mobile apps</span>
+            <span class="skill-line">Cross-platform apps for people working in the field.</span>
+            <span class="tags"><span>React Native</span><span>React</span></span>
+          </button></li>
+          <li><button class="skill" type="button" data-projects="cert field">
+            <span class="skill-name">AI-assisted delivery</span>
+            <span class="skill-line">AI agents that help plan, build and test — and AI features inside products.</span>
+            <span class="tags"><span>AI agents</span><span>Automated tests</span><span>AI features</span></span>
+          </button></li>
+        </ul>
+        <p class="also muted">Also at home with: Python · JavaScript · SQL · Git · Pandas · machine-learning basics</p>
+      </div>
+    </section>
+
+    <!-- ===== 5. Journey ===== -->
+    <section id="journey" class="section">
+      <div class="container narrow">
+        <p class="eyebrow">Journey</p>
+        <h2>How I got here</h2>
+        <ol class="timeline">
+          <li class="timeline-line" aria-hidden="true"></li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">Graduation</p>
+            <h3>B.Tech, Computer Science</h3>
+            <p>Government Engineering College, Ajmer.</p>
+          </li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">2023 – 2024</p>
+            <h3>Internships and a hackathon</h3>
+            <details class="more-list">
+              <summary>See internships</summary>
+              <ul>
+                <li>Python Developer Intern — TechnoHacks Edutech (Jun – Jul 2023) · <a href="https://drive.google.com/file/d/1G24M7h4i2fDR8LahQYDBNT5zIG5VItTn/view?usp=sharing" target="_blank" rel="noopener">certificate</a></li>
+                <li>Data Science Intern — Evoastra Ventures (Jun – Aug 2024) · <a href="https://drive.google.com/file/d/1Qt_k10cHNCeyvkIpj3zOLnmSuxJVwzwY/view?usp=sharing" target="_blank" rel="noopener">certificate</a></li>
+                <li>Machine Learning Intern — Atharvo India (Aug – Sep 2024) · <a href="https://drive.google.com/file/d/1lbu85CBay-rAGoGe45wERrE602BmvPUj/view?usp=sharing" target="_blank" rel="noopener">certificate</a></li>
+                <li>Data Science job simulation — Forage × British Airways (Oct 2024) · <a href="https://drive.google.com/file/d/1bENfQzwsrOs2xO8xNrk9Z6_g11mw8aq0/view?usp=sharing" target="_blank" rel="noopener">certificate</a></li>
+                <li>Python Developer Intern — Nagarjuna Tech Solutions (Oct 2024)</li>
+                <li>Rajasthan IT-Day Hackathon, Jaipur · <a href="https://drive.google.com/file/d/1xaFVtmP-651Zd8seAC9LtVpeYicacqcP/view?usp=sharing" target="_blank" rel="noopener">certificate</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">30 May 2025</p>
+            <h3>Joined ColoredCow</h3>
+            <p>Straight onto building the certification platform from zero.</p>
+          </li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">1 Jul 2025</p>
+            <h3>Intern</h3>
+            <p>Kept shipping on the platform as it went live.</p>
+          </li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">1 Oct 2025</p>
+            <h3>Software Engineer</h3>
+            <p>Full time. Built the mobile app and bulk data import on the field-operations platform, then extended the training LMS.</p>
+          </li>
+          <li class="timeline-step">
+            <svg class="timeline-mark" aria-hidden="true"><use href="#i-peak"/></svg>
+            <p class="timeline-when">Now</p>
+            <h3>Project Lead</h3>
+            <p>Back on the certification platform — now owning it end to end.</p>
+          </li>
+        </ol>
+        <details class="more-list certs">
+          <summary>Certificates</summary>
+          <ul>
+            <li>Python Essentials 1 — Cisco · <a href="https://drive.google.com/file/d/1w1voTePTPj2Gpmw-DZZFLG5CbIFsOZxB/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+            <li>Advanced Python — LinkedIn · <a href="https://drive.google.com/file/d/1TolTCQ6FyMQYB9VgsEXKQjyeStwzONG9/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+            <li>Learning Python — LinkedIn · <a href="https://drive.google.com/file/d/1D_FZC6wewSeyfPYvDOmJ2Xt1uuiMVtPu/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+            <li>Data Visualisation — Forage × TATA · <a href="https://drive.google.com/file/d/1ovWK5vrJR9BjMnqKejP3qlcWBmYNg5df/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+            <li>Debugging event — Engineering College, Ajmer · <a href="https://drive.google.com/file/d/1JrWeuZtNGeda5V9G8YeFd646y7Ozt2vv/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+            <li>Dharmachakra — Engineering College, Ajmer · <a href="https://drive.google.com/file/d/1WovaO9VAKzZhEjKgTNVlnWvcjxqPu0Gv/view?usp=sharing" target="_blank" rel="noopener">view</a></li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== 6. Earlier work ===== -->
+    <section id="earlier" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">Earlier work</p>
+        <h2>Where I started</h2>
+        <p class="section-intro muted">Projects from my student days — AI, data and plenty of Python.</p>
+        <ul class="earlier-grid" id="earlier-list">
+          <li class="mini"><h3>DevNavigator</h3><p>An AI assistant that builds personal learning roadmaps.</p><p class="tags"><span>LangChain</span><span>Streamlit</span><span>MySQL</span></p><a href="https://github.com/anuragk16/DevNavigator" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Airline review analysis</h3><p>Sentiment from customer reviews, plus a model that predicts bookings.</p><p class="tags"><span>Python</span><span>ML</span><span>Web scraping</span></p><a href="https://github.com/anuragk16/airline-customer-analysis" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>AI learning app</h3><p>Hackathon app with hand-gesture and posture detection, quizzes and stories.</p><p class="tags"><span>TensorFlow</span><span>OpenCV</span></p><a href="https://github.com/anuragk16/AI-POWERED-LEARNING-APP_-Pixel-pirates" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Mice protein classification</h3><p>Classifies mice into 7 groups from protein data.</p><p class="tags"><span>Python</span><span>ML</span><span>EDA</span></p><a href="https://github.com/anuragk16/mice-protein-classification" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Melvin — Telegram bot</h3><p>Control your PC remotely from Telegram.</p><p class="tags"><span>Python</span><span>Telegram API</span></p><a href="https://github.com/anuragk16/Melvin---personal-telegram-bot" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Mystic Survival Realms</h3><p>A 2D action-adventure game.</p><p class="tags"><span>Python</span><span>Pygame</span></p><a href="https://github.com/anuragk16/Mystic-Survival-Realms" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Student management system</h3><p>Add, update, search and delete student records.</p><p class="tags"><span>Python</span><span>Tkinter</span></p><a href="https://github.com/anuragk16/Student-management-system?tab=readme-ov-file" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Calculator GUI</h3><p>Follows BODMAS with my own parsing logic, in two UI toolkits.</p><p class="tags"><span>Tkinter</span><span>PyQt5</span></p><a href="https://github.com/anuragk16/calculator-GUI" target="_blank" rel="noopener">Tkinter</a> · <a href="https://github.com/anuragk16/Calculator-GUI-with-pyqt5" target="_blank" rel="noopener">PyQt5</a></li>
+          <li class="mini"><h3>Desktop assistant</h3><p>Searches Google or YouTube, reads text aloud, controls music.</p><p class="tags"><span>Python</span><span>Automation</span></p><a href="https://www.youtube.com/watch?v=EDq0Zly0l_A" target="_blank" rel="noopener">Video</a></li>
+          <li class="mini"><h3>Text-to-speech app</h3><p>Turn text into speech, save and play it back.</p><p class="tags"><span>Python</span><span>Tkinter</span></p><a href="https://github.com/anuragk16/Text_To_Speech" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Phone book</h3><p>Add, update, search and delete contacts.</p><p class="tags"><span>Python</span><span>Tkinter</span></p><a href="https://github.com/anuragk16/Phone-book-GUI" target="_blank" rel="noopener">Code</a> · <a href="https://www.youtube.com/watch?v=cB_rS1YN-mU" target="_blank" rel="noopener">Video</a></li>
+          <li class="mini"><h3>Digital wall clock</h3><p>Three clock hands running on separate threads.</p><p class="tags"><span>Python</span><span>Turtle</span></p><a href="https://github.com/anuragk16/Clock" target="_blank" rel="noopener">Code</a></li>
+          <li class="mini"><h3>Unity essentials</h3><p>UI, 2D art, scripting, audio and lighting in Unity.</p><p class="tags"><span>Unity</span><span>C#</span></p><a href="https://learn.unity.com/submission/667fa796edbc2a37c0e0e1a1" target="_blank" rel="noopener">Project</a></li>
+        </ul>
+        <div class="earlier-actions">
+          <button id="earlier-toggle" class="btn btn-ghost" type="button" aria-expanded="true" aria-controls="earlier-list">Show less</button>
+          <a href="old_portfolio/" class="muted">See my 2022 portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. Contact ===== -->
+    <section id="contact" class="section contact">
+      <div class="container narrow">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's talk.</h2>
+        <p class="section-intro">Want to build something together, or just say hi? Email is the fastest way to reach me.</p>
+        <ul class="contact-links">
+          <li><a class="btn btn-primary" href="mailto:anuragkumawat1603@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> anuragkumawat1603@gmail.com</a></li>
+          <li><a class="btn btn-ghost" href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a></li>
+          <li><a class="btn btn-ghost" href="https://github.com/anuragk16" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a></li>
+          <li><a class="btn btn-ghost" href="https://drive.google.com/file/d/1C3kgnHrbAAV-cBcfs7J2ZKeXa-0p1JHw/view?usp=drive_link" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Resume</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <svg class="footer-logo" viewBox="30 70 160 75" fill="none" aria-hidden="true">
+        <path clip-path="url(#ak-feet)" d="M50 142 L89.5 91 L129 142" stroke="currentColor" stroke-width="19" stroke-linejoin="round"/>
+        <path d="M148 81 L176 81 L132 106 L173 134.5 L144 134.5 L117 103 Z" fill="currentColor"/>
+      </svg>
+      <p class="muted">© 2026 Anurag Kumawat · Designed and built by hand.</p>
+    </div>
+  </footer>
 </body>
 </html>
