@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anurag Kumawat — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --ink: #1c211e; --muted: #5e6660; --acc: #2f6b4f; --line: #d9d3c5; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); font-size: 9.2pt; line-height: 1.38; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; padding: 11mm 14mm 6mm; }
+  h1, h2, h3 { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; padding-bottom: 4mm; border-bottom: 1.5px solid var(--ink); }
+  .who { display: flex; align-items: center; gap: 4mm; }
+  .logo { width: 13mm; color: var(--ink); }
+  h1 { font-family: "Fraunces", Georgia, serif; font-size: 25pt; font-weight: 700; line-height: 1; letter-spacing: -.01em; }
+  .role { margin-top: 1.5mm; font-size: 10pt; font-weight: 600; color: var(--acc); letter-spacing: .06em; text-transform: uppercase; }
+  .contact { text-align: right; font-size: 8.8pt; line-height: 1.55; color: var(--muted); }
+  .contact b { color: var(--ink); font-weight: 500; }
+
+  .summary { margin: 3.5mm 0 0; font-size: 9.6pt; }
+
+  section { margin-top: 3.6mm; }
+  h2 { display: flex; align-items: center; gap: 2.5mm; font-family: "Fraunces", Georgia, serif; font-size: 12.5pt; font-weight: 600; margin-bottom: 2mm; }
+  h2::before { content: ""; width: 3.2mm; height: 2.2mm; flex: none; background: var(--acc); clip-path: polygon(0 100%, 50% 0, 100% 100%, 78% 100%, 50% 40%, 22% 100%); }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-head h3 { font-size: 11pt; font-weight: 600; }
+  .when { font-size: 8.8pt; color: var(--muted); white-space: nowrap; }
+  .path { font-size: 8.8pt; color: var(--muted); margin: .5mm 0 2.5mm; }
+
+  .proj { margin: 0 0 2.2mm; padding-left: 3.5mm; border-left: 2px solid var(--line); }
+  .proj.lead { border-left-color: var(--acc); }
+  .proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+  .proj-head b { font-size: 10pt; font-weight: 600; }
+  .proj-head .tag { font-size: 8.4pt; color: var(--acc); font-weight: 600; white-space: nowrap; }
+  .stack { font-size: 8.4pt; color: var(--muted); }
+  ul { margin: 1mm 0 0; padding-left: 4mm; }
+  li { margin: 0 0 .8mm; }
+  li::marker { color: var(--acc); }
+
+  .skills { display: grid; grid-template-columns: 34mm 1fr; row-gap: 1.2mm; column-gap: 4mm; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--ink); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+  .list { list-style: none; padding: 0; margin: 0; }
+  .list li { margin-bottom: 1.6mm; }
+  .list .t { font-weight: 600; }
+  .list .s { color: var(--muted); font-size: 8.8pt; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="who">
+      <svg class="logo" viewBox="30 70 160 75" fill="none" aria-hidden="true">
+        <clipPath id="f"><rect x="0" y="0" width="216" height="134.5"/></clipPath>
+        <path clip-path="url(#f)" d="M50 142 L89.5 91 L129 142" stroke="currentColor" stroke-width="19" stroke-linejoin="round"/>
+        <path d="M148 81 L176 81 L132 106 L173 134.5 L144 134.5 L117 103 Z" fill="currentColor"/>
+      </svg>
+      <div>
+        <h1>Anurag Kumawat</h1>
+        <div class="role">Software Engineer</div>
+      </div>
+    </div>
+    <div class="contact">
+      <a href="mailto:anuragkumawat1603@gmail.com"><b>anuragkumawat1603@gmail.com</b></a><br>
+      <a href="https://anuragk16.github.io/">anuragk16.github.io</a><br>
+      <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/">linkedin.com/in/anurag-kumawat-71b84721b</a><br>
+      <a href="https://github.com/anuragk16">github.com/anuragk16</a>
+    </div>
+  </header>
+
+  <p class="summary">I build software from zero and take it to real users. At ColoredCow I have helped build and launch three production systems, and I now lead one of them end to end — from product direction and requirements to development, releases and servers.</p>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job-head">
+      <h3>ColoredCow — Software Engineer</h3>
+      <span class="when">May 2025 – Present</span>
+    </div>
+    <p class="path">Joined May 2025 · Intern from Jul 2025 · Full-time Software Engineer from Oct 2025 · Project Lead now</p>
+
+    <div class="proj lead">
+      <div class="proj-head"><b>National certification platform · for an industry body</b><span class="tag">Project Lead</span></div>
+      <div class="stack">Django REST Framework · Next.js · PostgreSQL</div>
+      <ul>
+        <li>Part of the team that built the platform from scratch — no spec and no existing system to copy. It went live in about two months.</li>
+        <li>Now lead it end to end: product direction, requirements and estimates, development, releases and server management.</li>
+        <li>Run delivery with an AI-agent workflow: planning and building agents, auto-generated tests and release checklists.</li>
+        <li>Used by hundreds of businesses.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><b>Field-operations platform · for an education non-profit</b></div>
+      <div class="stack">React Native · React · AI features</div>
+      <ul>
+        <li>Built the React Native mobile app for field teams, with AI features, and worked on the React web app.</li>
+        <li>Designed and built a bulk data import system from scratch that runs reliably in production with real data.</li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><b>Health-worker training platform (LMS) · for a health non-profit</b></div>
+      <div class="stack">Frappe · open source</div>
+      <ul>
+        <li>Customised and extended an open-source Frappe LMS to fit the training programme, instead of building one from zero.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Backend</dt><dd>Python, Django, Django REST Framework, Flask, PostgreSQL, MySQL, SQL</dd>
+      <dt>Frontend &amp; mobile</dt><dd>JavaScript, React, Next.js, React Native, HTML, CSS</dd>
+      <dt>Product &amp; delivery</dt><dd>Requirements and estimates, release planning, server management, Git</dd>
+      <dt>AI &amp; data</dt><dd>AI agents in delivery, AI features in apps, LangChain, Pandas, NumPy, scikit-learn, TensorFlow, OpenCV</dd>
+    </dl>
+  </section>
+
+  <section class="two">
+    <div>
+      <h2>Earlier experience</h2>
+      <ul class="list">
+        <li><span class="t">Python Developer Intern</span> — Nagarjuna Tech Solutions<br><span class="s">Oct 2024 · Flask APIs with SQL; a resume builder on the Gemini API</span></li>
+        <li><span class="t">Machine Learning Intern</span> — Atharvo India<br><span class="s">Aug – Sep 2024 · Handwritten digit classifier</span></li>
+        <li><span class="t">Data Science Intern</span> — Evoastra Ventures<br><span class="s">Jun – Aug 2024 · Scraping, data cleaning, ML models, Tableau</span></li>
+        <li><span class="t">Python Developer Intern</span> — TechnoHacks Edutech<br><span class="s">Jun – Jul 2023 · Resume parser, translator and small apps</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Projects</h2>
+      <ul class="list">
+        <li><span class="t">DevNavigator</span> — AI learning-roadmap assistant<br><span class="s">LangChain · Streamlit · MySQL</span></li>
+        <li><span class="t">AI learning app</span> — Rajasthan IT-Day Hackathon<br><span class="s">Gesture and posture detection · TensorFlow · OpenCV</span></li>
+        <li><span class="t">Airline review analysis</span> — Forage × British Airways<br><span class="s">Sentiment analysis and booking prediction</span></li>
+      </ul>
+      <h2 style="margin-top:4mm">Education</h2>
+      <ul class="list">
+        <li><span class="t">B.Tech, Computer Science and Engineering</span><br><span class="s">Government Engineering College, Ajmer</span></li>
+      </ul>
+      <h2 style="margin-top:4mm">Certifications</h2>
+      <ul class="list">
+        <li><span class="s">Python Essentials 1 — Cisco · Advanced Python — LinkedIn · Data Visualisation — Forage × TATA</span></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

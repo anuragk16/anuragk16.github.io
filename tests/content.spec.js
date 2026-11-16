@@ -50,7 +50,7 @@ test('contact links', async ({ page }) => {
   await expect(c.locator('a[href="mailto:anuragkumawat1603@gmail.com"]')).toHaveCount(1);
   await expect(c.locator('a[href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/"]')).toHaveCount(1);
   await expect(c.locator('a[href="https://github.com/anuragk16"]')).toHaveCount(1);
-  await expect(c.locator('a[href="https://drive.google.com/file/d/1C3kgnHrbAAV-cBcfs7J2ZKeXa-0p1JHw/view?usp=drive_link"]')).toHaveCount(1);
+  await expect(c.locator('a[href="resume/Anurag-Kumawat-Resume.pdf"]')).toHaveCount(1);
 });
 
 test('no horizontal scroll at 360px', async ({ page }) => {
@@ -68,4 +68,13 @@ test('old portfolio still reachable', async ({ request }) => {
 test('no link to the 2022 portfolio', async ({ page }) => {
   await expect(page.locator('a[href^="old_portfolio"]')).toHaveCount(0);
   await expect(page.locator('body')).not.toContainText('2022 portfolio');
+});
+
+test('every Resume link opens the PDF on this site', async ({ page, request }) => {
+  const hrefs = await page.locator('a', { hasText: 'Resume' }).evaluateAll((els) => els.map((e) => e.getAttribute('href')));
+  expect(hrefs.length).toBeGreaterThanOrEqual(2);
+  for (const h of hrefs) expect(h).toBe('resume/Anurag-Kumawat-Resume.pdf');
+  const res = await request.get('/resume/Anurag-Kumawat-Resume.pdf');
+  expect(res.status()).toBe(200);
+  expect((await res.body()).subarray(0, 5).toString()).toBe('%PDF-');
 });
