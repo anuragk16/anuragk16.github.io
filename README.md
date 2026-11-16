@@ -21,7 +21,10 @@ npm test
 ```
 
 The suite covers content, the theme switch, interactions, motion (including reduced motion and no-JS), meta tags,
-accessibility (axe), and a content guard that fails if private client names appear in any served file.
+accessibility (axe), and a content guard that fails if private client names appear in any public file.
+
+The guard's word list is private and never committed. Put it in `.private/content-guard.json` (git-ignored):
+`{ "banned": "<regex>", "numbers": "<regex>" }`. The guard refuses to pass without it.
 
 ## Share image
 

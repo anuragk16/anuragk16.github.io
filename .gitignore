@@ -4,3 +4,4 @@ playwright-report/
 docs/superpowers/
 .superpowers/
 .DS_Store
+.private/
