@@ -1,0 +1,9 @@
+# GitHub Pages: publish only the site, not the dev tooling.
+exclude:
+  - tests/
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - README.md

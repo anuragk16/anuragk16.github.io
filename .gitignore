@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+docs/superpowers/
+.superpowers/
+.DS_Store
+.private/

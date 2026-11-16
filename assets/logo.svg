@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 70 160 75" fill="none">
+  <title>Anurag Kumawat</title>
+  <clipPath id="ak-feet"><rect x="0" y="0" width="216" height="134.5"/></clipPath>
+  <path class="logo-a" clip-path="url(#ak-feet)" d="M50 142 L89.5 91 L129 142" stroke="currentColor" stroke-width="19" stroke-linejoin="round"/>
+  <path class="logo-k" d="M148 81 L176 81 L132 106 L173 134.5 L144 134.5 L117 103 Z" fill="currentColor"/>
+</svg>

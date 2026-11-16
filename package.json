@@ -1,0 +1,23 @@
+{
+  "name": "anuragk16-portfolio",
+  "version": "1.0.0",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragk16/anuragk16.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anuragk16/anuragk16.github.io/issues"
+  },
+  "homepage": "https://github.com/anuragk16/anuragk16.github.io#readme",
+  "private": true,
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1"
+  }
+}
