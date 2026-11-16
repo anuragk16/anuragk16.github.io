@@ -101,21 +101,47 @@ test('opening one card does not stretch its neighbour', async ({ page, isMobile 
   await expect(page.locator('#project-field-details')).toBeHidden();
 });
 
-test('project cards never sit side by side, so opening one leaves no gap', async ({ page }) => {
-  const grid = await page.locator('#work .projects').boundingBox();
-  for (const id of ['cert', 'field', 'lms']) {
-    await page.locator(`#project-${id} .project-toggle`).click();
-    const boxes = await page.locator('#work .project').evaluateAll((els) => els.map((e) => { const r = e.getBoundingClientRect(); return { x: r.x, w: r.width }; }));
-    for (const b of boxes) {
-      expect(Math.abs(b.x - grid.x)).toBeLessThan(1);
-      expect(Math.abs(b.w - grid.width)).toBeLessThan(1);
-    }
-  }
+test('side cards share a row on desktop', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'cards stack on phones');
+  const f = await page.locator('#project-field').boundingBox();
+  const l = await page.locator('#project-lms').boundingBox();
+  expect(Math.abs(f.y - l.y)).toBeLessThan(1);
+  expect(l.x).toBeGreaterThan(f.x + f.width);
 });
 
-test('opened details use three columns on desktop', async ({ page, isMobile }) => {
-  test.skip(isMobile, 'details stack on phones');
+test('side card details open in one full-width panel below both cards', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'desktop layout');
+  const grid = await page.locator('#work .projects').boundingBox();
+  const f0 = await page.locator('#project-field').boundingBox();
+  const l0 = await page.locator('#project-lms').boundingBox();
   await page.locator('#project-field .project-toggle').click();
-  const ys = await page.locator('#project-field-details p').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
-  expect(new Set(ys).size).toBe(1);
+  const panel = page.locator('#project-field-details');
+  await expect(panel).toBeVisible();
+  const pb = await panel.boundingBox();
+  expect(Math.abs(pb.x - grid.x)).toBeLessThan(1);
+  expect(Math.abs(pb.width - grid.width)).toBeLessThan(1);
+  const f1 = await page.locator('#project-field').boundingBox();
+  const l1 = await page.locator('#project-lms').boundingBox();
+  expect(pb.y).toBeGreaterThan(Math.max(f1.y + f1.height, l1.y + l1.height) - 1);
+  expect(f1.height).toBeCloseTo(f0.height, 0);
+  expect(l1.height).toBeCloseTo(l0.height, 0);
+  await expect(panel).toHaveAttribute('data-for', 'field');
+});
+
+test('only one side panel is open at a time', async ({ page }) => {
+  await page.locator('#project-field .project-toggle').click();
+  await page.locator('#project-lms .project-toggle').click();
+  await expect(page.locator('#project-lms-details')).toBeVisible();
+  await expect(page.locator('#project-field-details')).toBeHidden();
+  await expect(page.locator('#project-field .project-toggle')).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('on phones a panel opens right below its own card', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'phone layout');
+  await page.locator('#project-field .project-toggle').click();
+  const card = await page.locator('#project-field').boundingBox();
+  const panel = await page.locator('#project-field-details').boundingBox();
+  const lms = await page.locator('#project-lms').boundingBox();
+  expect(panel.y).toBeGreaterThan(card.y + card.height - 1);
+  expect(panel.y).toBeLessThan(lms.y);
 });

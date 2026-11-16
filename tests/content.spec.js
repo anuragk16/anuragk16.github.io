@@ -23,7 +23,7 @@ test('three project cards with P/D/R', async ({ page }) => {
   const cards = page.locator('#work .project');
   await expect(cards).toHaveCount(3);
   for (const id of ['cert', 'field', 'lms']) {
-    const details = page.locator(`#project-${id} .project-details`);
+    const details = page.locator(`#project-${id}-details`);
     const text = await details.textContent();
     for (const label of ['Problem', 'What I did', 'Result']) expect(text, id).toContain(label);
   }
@@ -81,4 +81,11 @@ test('every Resume link opens the PDF on this site', async ({ page, request }) =
 
 test('work intro is a single clean line', async ({ page }) => {
   await expect(page.locator('#work .section-intro')).toHaveText('Real systems, built from scratch and used every day.');
+});
+
+test('project cards and panels have a card background', async ({ page }) => {
+  for (const sel of ['#project-cert', '#project-field', '#project-lms', '.project-panel']) {
+    const bg = await page.locator(sel).first().evaluate((e) => getComputedStyle(e).backgroundColor);
+    expect(bg, sel).not.toBe('rgba(0, 0, 0, 0)');
+  }
 });

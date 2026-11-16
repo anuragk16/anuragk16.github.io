@@ -1,15 +1,28 @@
 /* Card expand/collapse, skill <-> project linking, and "Show more" for earlier work. */
 (function () {
   // Project cards: collapsed by default when JS runs (fully open without JS).
-  document.querySelectorAll('.project-toggle').forEach(function (btn) {
-    var details = document.getElementById(btn.getAttribute('aria-controls'));
+  // Side cards share one panel row, so only one of their panels is open at a time.
+  var toggles = Array.prototype.slice.call(document.querySelectorAll('.project-toggle'));
+  function target(btn) { return document.getElementById(btn.getAttribute('aria-controls')); }
+  function setOpen(btn, open) {
+    var details = target(btn);
     if (!details) return;
-    function setOpen(open) {
-      btn.setAttribute('aria-expanded', String(open));
-      details.hidden = !open;
-    }
-    setOpen(false);
-    btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
+    btn.setAttribute('aria-expanded', String(open));
+    details.hidden = !open;
+  }
+  toggles.forEach(function (btn) {
+    setOpen(btn, false);
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      var details = target(btn);
+      if (open && details && details.classList.contains('project-panel')) {
+        toggles.forEach(function (other) {
+          var d = target(other);
+          if (other !== btn && d && d.classList.contains('project-panel')) setOpen(other, false);
+        });
+      }
+      setOpen(btn, open);
+    });
   });
 
   // Skills: hover or focus highlights the projects that prove them; click jumps to the first one.
