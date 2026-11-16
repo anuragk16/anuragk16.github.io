@@ -1,0 +1,60 @@
+/* Design tokens — Paper (light) and Ink (dark), derived from the AK mark. */
+:root {
+  --bg: #f5f2ea;
+  --ink: #1c211e;
+  --muted: #5e6660;
+  --acc: #2f6b4f;
+  --card: #ffffff;
+  --line: #d9d3c5;
+  --logo: #1c211e;
+  --on-ink: #f5f2ea;
+
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --cut-sm: 8px;
+  --cut: 14px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+
+  --max: 1120px;
+  --ease-spring: cubic-bezier(.7, -.3, .3, 1.3);
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+
+  color-scheme: light;
+}
+
+/* Ink tokens: used when chosen, or by system preference when no choice was made (incl. no-JS). */
+:root[data-theme="dark"] {
+  --bg: #0f1411;
+  --ink: #eef5eb;
+  --muted: #8a978c;
+  --acc: #a8d5ba;
+  --card: #18201b;
+  --line: #2c3630;
+  --logo: #e8f5e1;
+  --on-ink: #0f1411;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0f1411;
+    --ink: #eef5eb;
+    --muted: #8a978c;
+    --acc: #a8d5ba;
+    --card: #18201b;
+    --line: #2c3630;
+    --logo: #e8f5e1;
+    --on-ink: #0f1411;
+    color-scheme: dark;
+  }
+}

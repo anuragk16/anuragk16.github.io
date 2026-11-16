@@ -1,0 +1,52 @@
+/* ---------- Nav ---------- */
+.site-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  transition: background-color .4s ease;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 4.25rem; }
+.brand { color: var(--logo); display: inline-flex; padding: .25rem; }
+.logo { width: 3.25rem; height: auto; overflow: visible; }
+.nav-links { display: flex; align-items: center; gap: clamp(.75rem, 2.5vw, 1.75rem); list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; }
+.nav-links a:hover, .nav-links a[aria-current="true"] { color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: clamp(.75rem, 2.5vw, 1.75rem); }
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+#scroll-progress {
+  position: absolute; left: 0; bottom: -1px; height: 3px; width: 100%;
+  background: var(--acc);
+  transform-origin: 0 50%; transform: scaleX(0);
+}
+
+/* ---------- Theme switch: "A turns into K" ---------- */
+.theme-switch {
+  --w: 4.5rem; --h: 2.25rem; --pad: 4px;
+  position: relative; flex: none;
+  width: var(--w); height: var(--h);
+  padding: 0; border: 0; cursor: pointer;
+  background: var(--line);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  transition: background-color .4s ease;
+}
+.theme-switch .knob {
+  position: absolute; top: var(--pad); left: var(--pad);
+  width: calc(var(--w) / 2); height: calc(var(--h) - 2 * var(--pad));
+  display: grid; place-items: center;
+  background: var(--ink);
+  clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
+  transition: transform .45s var(--ease-spring), background-color .4s ease;
+}
+[data-theme="dark"] .theme-switch .knob { transform: translateX(calc(var(--w) / 2 - 2 * var(--pad))); }
+.switch-glyph { width: 1.25rem; height: 1.25rem; overflow: visible; }
+.switch-peak {
+  fill: none; stroke: var(--bg); stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: butt;
+  transform-box: view-box; transform-origin: 12px 12px;
+  transition: transform .45s var(--ease-spring), stroke .4s ease;
+}
+[data-theme="dark"] .switch-peak { transform: rotate(-90deg); }
+.theme-switch:focus-visible { outline: none; }
+.theme-switch:focus-visible .knob { outline: 3px solid var(--acc); outline-offset: -3px; }

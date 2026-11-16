@@ -14,5 +14,5 @@ module.exports = defineConfig({
   ],
   webServer: process.env.BASE_URL
     ? undefined
-    : { command: 'python3 -m http.server 4173', url: BASE_URL, reuseExistingServer: true },
+    : { command: 'node tests/server.js', url: BASE_URL, reuseExistingServer: true },
 });
