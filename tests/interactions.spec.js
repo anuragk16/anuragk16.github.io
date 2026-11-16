@@ -100,3 +100,22 @@ test('opening one card does not stretch its neighbour', async ({ page, isMobile 
   expect(after).toBeCloseTo(before, 0);
   await expect(page.locator('#project-field-details')).toBeHidden();
 });
+
+test('project cards never sit side by side, so opening one leaves no gap', async ({ page }) => {
+  const grid = await page.locator('#work .projects').boundingBox();
+  for (const id of ['cert', 'field', 'lms']) {
+    await page.locator(`#project-${id} .project-toggle`).click();
+    const boxes = await page.locator('#work .project').evaluateAll((els) => els.map((e) => { const r = e.getBoundingClientRect(); return { x: r.x, w: r.width }; }));
+    for (const b of boxes) {
+      expect(Math.abs(b.x - grid.x)).toBeLessThan(1);
+      expect(Math.abs(b.w - grid.width)).toBeLessThan(1);
+    }
+  }
+});
+
+test('opened details use three columns on desktop', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'details stack on phones');
+  await page.locator('#project-field .project-toggle').click();
+  const ys = await page.locator('#project-field-details p').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+  expect(new Set(ys).size).toBe(1);
+});
