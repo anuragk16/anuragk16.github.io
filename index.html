@@ -133,40 +133,53 @@
             <p class="project-meta">For an industry body · Django REST · Next.js · PostgreSQL</p>
             <h3>National certification platform</h3>
             <p class="project-sub">Project Lead — I own the project and run it end to end.</p>
-            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-cert-details">How it went</button>
+            <p class="project-teaser">No spec, nothing to copy — built from zero, live in about two months, now led end to end.</p>
             <div class="project-details" id="project-cert-details">
               <p><strong>Problem</strong> An industry body needed a digital system to certify businesses. There was no spec and no existing system to copy.</p>
               <p><strong>What I did</strong> I was part of the team that built it from scratch, from day one. Today I lead it: product direction, requirements, development, releases and servers. I run the work with an AI-agent workflow — planning and building agents, auto-generated tests and release checklists.</p>
               <p><strong>Result</strong> It went live in about two months. Hundreds of businesses use it.</p>
             </div>
+            <button class="project-open" type="button" aria-haspopup="dialog" aria-controls="case-study">Read the case study</button>
           </article>
 
           <article class="project reveal" id="project-field" data-project="field">
             <p class="project-meta">For an education non-profit · React Native · React</p>
             <h3>Field-operations platform</h3>
             <p class="project-sub">Mobile app and bulk data import</p>
-            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-field-details">How it went</button>
+            <p class="project-teaser">A mobile app for field teams, and a bulk import that brings in large amounts of data reliably.</p>
+            <div class="project-details" id="project-field-details">
+              <p><strong>Problem</strong> Field teams needed a mobile app. The system also needed a reliable way to bring in large amounts of existing data.</p>
+              <p><strong>What I did</strong> I built the React Native mobile app, with AI features, and worked on the React web app. I built the bulk data import system from scratch.</p>
+              <p><strong>Result</strong> The import system runs reliably in production with real data.</p>
+            </div>
+            <button class="project-open" type="button" aria-haspopup="dialog" aria-controls="case-study">Read the case study</button>
           </article>
 
           <article class="project reveal" id="project-lms" data-project="lms">
             <p class="project-meta">For a health non-profit · Frappe (open source)</p>
             <h3>Health-worker training platform</h3>
             <p class="project-sub">Extended an open-source learning platform</p>
-            <button class="project-toggle" type="button" aria-expanded="true" aria-controls="project-lms-details">How it went</button>
+            <p class="project-teaser">A training platform shipped on top of open source, instead of building one from zero.</p>
+            <div class="project-details" id="project-lms-details">
+              <p><strong>Problem</strong> Health workers needed a learning platform, without building one from zero.</p>
+              <p><strong>What I did</strong> I took an open-source LMS built on Frappe, then customised and extended it to fit their training.</p>
+              <p><strong>Result</strong> It shipped on top of an existing system. I learned to work well inside someone else's codebase.</p>
+            </div>
+            <button class="project-open" type="button" aria-haspopup="dialog" aria-controls="case-study">Read the case study</button>
           </article>
-          <div class="project-details project-panel" id="project-field-details" data-for="field" role="region" aria-label="Field-operations platform — how it went">
-            <p class="panel-title">Field-operations platform</p>
-            <p><strong>Problem</strong> Field teams needed a mobile app. The system also needed a reliable way to bring in large amounts of existing data.</p>
-            <p><strong>What I did</strong> I built the React Native mobile app, with AI features, and worked on the React web app. I built the bulk data import system from scratch.</p>
-            <p><strong>Result</strong> The import system runs reliably in production with real data.</p>
-          </div>
-          <div class="project-details project-panel" id="project-lms-details" data-for="lms" role="region" aria-label="Health-worker training platform — how it went">
-            <p class="panel-title">Health-worker training platform</p>
-            <p><strong>Problem</strong> Health workers needed a learning platform, without building one from zero.</p>
-            <p><strong>What I did</strong> I took an open-source LMS built on Frappe, then customised and extended it to fit their training.</p>
-            <p><strong>Result</strong> It shipped on top of an existing system. I learned to work well inside someone else's codebase.</p>
-          </div>
         </div>
+
+        <dialog class="case-study" id="case-study" aria-labelledby="case-study-title">
+          <div class="case-inner">
+            <button class="case-close" type="button" aria-label="Close case study">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <p class="project-meta case-meta"></p>
+            <h3 class="case-title" id="case-study-title"></h3>
+            <p class="project-sub case-sub"></p>
+            <div class="case-steps"></div>
+          </div>
+        </dialog>
       </div>
     </section>
 

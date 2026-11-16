@@ -84,7 +84,7 @@ test('work intro is a single clean line', async ({ page }) => {
 });
 
 test('project cards and panels have a card background', async ({ page }) => {
-  for (const sel of ['#project-cert', '#project-field', '#project-lms', '.project-panel']) {
+  for (const sel of ['#project-cert', '#project-field', '#project-lms']) {
     const bg = await page.locator(sel).first().evaluate((e) => getComputedStyle(e).backgroundColor);
     expect(bg, sel).not.toBe('rgba(0, 0, 0, 0)');
   }

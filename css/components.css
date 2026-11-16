@@ -115,19 +115,17 @@
 @media (max-width: 640px) { .proof-list { grid-template-columns: 1fr; } }
 
 /* ---------- Projects ---------- */
-.projects { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; }
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: stretch; }
 .project-main { grid-column: 1 / -1; }
 .project {
-  position: relative; background: var(--card); padding: clamp(1.25rem, 3vw, 2rem);
+  position: relative; display: flex; flex-direction: column;
+  background: var(--card); padding: clamp(1.25rem, 3vw, 2rem);
   clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
   transition: transform .3s ease, box-shadow .3s ease, background-color .4s ease;
 }
-@media (max-width: 760px) {
-  .projects { grid-template-columns: 1fr; }
-  /* On phones each panel sits right under its own card. */
-  #project-field { order: 1; } #project-field-details { order: 2; }
-  #project-lms { order: 3; } #project-lms-details { order: 4; }
-}
+.js .project { cursor: pointer; }
+.js .project:hover { transform: translateY(-4px); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, .45); }
+@media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }
 .project-main h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 .project::after {
   content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
@@ -137,38 +135,53 @@
 .project.is-linked { transform: translateY(-3px); }
 .project-meta { font-size: .85rem; color: var(--muted); margin-bottom: var(--space-2); }
 .project h3 { margin-bottom: var(--space-2); }
-.project-sub { font-weight: 600; color: var(--acc); margin-bottom: var(--space-4); }
-.project-toggle {
-  display: inline-flex; align-items: center; gap: .45rem; padding: 0; border: 0; background: none; cursor: pointer;
-  font-weight: 600; color: var(--ink); font-size: .95rem;
-}
-.project-toggle::after {
-  content: ""; width: .5rem; height: .5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(-2px); transition: transform .3s ease;
-}
-.project-toggle[aria-expanded="true"]::after { transform: rotate(-135deg) translateY(-2px); }
-.project:has(.project-toggle[aria-expanded="true"]):not(.project-main) { box-shadow: inset 0 -3px 0 var(--acc); }
-.project-details { margin-top: var(--space-4); max-width: 46rem; }
+.project-sub { font-weight: 600; color: var(--acc); margin-bottom: var(--space-3); }
+.project-teaser { color: var(--muted); max-width: 46rem; }
 
-/* Side cards share one detail panel row below them, so opening one never leaves a gap. */
-.project-panel {
-  grid-column: 1 / -1; position: relative; max-width: none; margin-top: 0;
-  background: var(--card); padding: clamp(1.25rem, 3vw, 2rem);
-  border-top: 3px solid var(--acc);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
-  transition: background-color .4s ease;
-}
-.panel-title { grid-column: 1 / -1; font-family: var(--font-serif); font-weight: 600; font-size: 1.15rem; margin-bottom: var(--space-3); }
-@media (min-width: 900px) {
-  .project-panel:not([hidden]) { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: var(--space-6); }
-  .project-panel p { margin-bottom: 0; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .js .project-panel:not([hidden]) { animation: panel-in .35s var(--ease-out); }
-  @keyframes panel-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
-}
+/* Without JS the full story shows in the card; with JS it opens in the case-study view. */
+.project-details { margin-top: var(--space-2); max-width: 46rem; }
 .project-details p { margin-bottom: var(--space-3); }
 .project-details strong { display: block; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); }
+.js .project .project-details { display: none; }
+html:not(.js) .project-open, html:not(.js) .project-teaser { display: none; }
+
+.project-open {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .5rem; padding: .35rem 0; border: 0; background: none; cursor: pointer;
+  font-weight: 600; font-size: .95rem; color: var(--ink);
+}
+.project-open::after { content: "→"; color: var(--acc); transition: transform .25s ease; }
+.project:hover .project-open::after, .project-open:focus-visible::after { transform: translateX(5px); }
+
+/* ---------- Case study (opens from its card) ---------- */
+.case-study {
+  border: 0; padding: 0; margin: auto;
+  width: min(900px, calc(100vw - 2rem)); max-height: min(88vh, 760px);
+  background: var(--card); color: var(--ink); overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+}
+.case-study::backdrop { background: rgb(10 14 12 / .55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+html.case-open { overflow: hidden; }
+.case-inner { position: relative; padding: clamp(1.5rem, 4vw, 3rem); max-height: inherit; overflow: auto; }
+.case-close {
+  position: absolute; top: 1rem; right: 1.5rem; width: 2.75rem; height: 2.75rem;
+  display: grid; place-items: center; cursor: pointer; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--line);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+}
+.case-close:hover { background: var(--ink); color: var(--bg); }
+.case-close:focus-visible { outline: 3px solid var(--acc); outline-offset: -4px; }
+.case-title { font-size: clamp(1.75rem, 4vw, 2.6rem); padding-right: 3.5rem; }
+.case-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-5); padding-top: var(--space-5); border-top: 1px solid var(--line); }
+.case-step-label { display: flex; align-items: center; gap: .5rem; font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--acc); margin-bottom: var(--space-2); }
+.case-step-num {
+  display: grid; place-items: center; width: 1.6rem; height: 1.6rem; font-size: .8rem; letter-spacing: 0;
+  background: var(--ink); color: var(--bg);
+  clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 5px, 100% 100%, 0 100%);
+}
+.case-step p { margin: 0; }
+.case-step.is-result p:last-child { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.4; }
+@media (max-width: 760px) { .case-steps { grid-template-columns: 1fr; gap: var(--space-5); } }
 
 /* ---------- Skills ---------- */
 .skills { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
