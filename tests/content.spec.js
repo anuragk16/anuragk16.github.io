@@ -64,3 +64,8 @@ test('old portfolio still reachable', async ({ request }) => {
   const res = await request.get('/old_portfolio/');
   expect(res.status()).toBe(200);
 });
+
+test('no link to the 2022 portfolio', async ({ page }) => {
+  await expect(page.locator('a[href^="old_portfolio"]')).toHaveCount(0);
+  await expect(page.locator('body')).not.toContainText('2022 portfolio');
+});
