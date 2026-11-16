@@ -21,8 +21,8 @@
 
   /* 6. Journey: steps light up as the line reaches them. */
   .js .timeline-line::after { transform: scaleY(var(--progress, 0)); }
-  .js .timeline-step { opacity: .3; transition: opacity .4s ease; }
-  .js .timeline-step.is-on { opacity: 1; }
+  .js .timeline-when { opacity: 0; transform: translateY(6px); transition: opacity .4s ease, transform .4s var(--ease-out); }
+  .js .timeline-step.is-on .timeline-when { opacity: 1; transform: none; }
   .js .timeline-mark { transform: scale(0); transition: transform .45s cubic-bezier(.3, 1.6, .5, 1); }
   .js .timeline-step.is-on .timeline-mark { transform: scale(1); }
 }

@@ -53,6 +53,14 @@ test.describe('with motion', () => {
     await expect(h1).toHaveAttribute('aria-label', HEADLINE);
   });
 
+  test('timeline steps not yet reached stay readable', async ({ page }) => {
+    await page.goto('/');
+    const last = page.locator('.timeline-step').last();
+    await expect(last).not.toHaveClass(/is-on/);
+    await expect(last).toHaveCSS('opacity', '1');
+    await expect(last.locator('h3')).toHaveCSS('opacity', '1');
+  });
+
   test('logo draws itself', async ({ page }) => {
     await page.goto('/');
     const name = await page.locator('.site-nav .logo-a').evaluate((el) => getComputedStyle(el).animationName);
