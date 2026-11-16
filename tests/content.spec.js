@@ -89,3 +89,7 @@ test('project cards and panels have a card background', async ({ page }) => {
     expect(bg, sel).not.toBe('rgba(0, 0, 0, 0)');
   }
 });
+
+test('footer shows only the copyright line', async ({ page }) => {
+  await expect(page.locator('.site-footer p')).toHaveText('© 2026 Anurag Kumawat');
+});
