@@ -7,3 +7,4 @@ exclude:
   - package-lock.json
   - playwright.config.js
   - README.md
+  - resume/resume.html
