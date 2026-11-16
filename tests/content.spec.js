@@ -78,3 +78,7 @@ test('every Resume link opens the PDF on this site', async ({ page, request }) =
   expect(res.status()).toBe(200);
   expect((await res.body()).subarray(0, 5).toString()).toBe('%PDF-');
 });
+
+test('work intro is a single clean line', async ({ page }) => {
+  await expect(page.locator('#work .section-intro')).toHaveText('Real systems, built from scratch and used every day.');
+});
