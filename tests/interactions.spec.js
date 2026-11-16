@@ -64,3 +64,28 @@ test('tab order reaches the theme switch', async ({ page, isMobile }) => {
   }
   expect(found).toBe(true);
 });
+
+test('clipped controls keep a visible focus ring', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'keyboard path tested on desktop');
+  await page.keyboard.press('Tab'); // enter keyboard modality so :focus-visible applies
+  for (const sel of ['.hero-actions .btn-primary', '.social a', '#earlier-toggle', '.contact-links .btn']) {
+    const el = page.locator(sel).first();
+    await el.focus();
+    const offset = await el.evaluate((e) => parseFloat(getComputedStyle(e).outlineOffset));
+    expect(offset, sel).toBeLessThanOrEqual(-2);
+  }
+});
+
+test('each skill says where it was used', async ({ page }) => {
+  const skills = page.locator('#skills .skill');
+  const n = await skills.count();
+  for (let i = 0; i < n; i++) await expect(skills.nth(i).locator('.skill-used')).toContainText('Used in');
+  await expect(page.locator('.skill[data-projects="lms"] .skill-used')).toContainText('Health-worker training platform');
+});
+
+test('clicking a skill scrolls to the work that proves it', async ({ page }) => {
+  await page.locator('.skill[data-projects="lms"]').click();
+  const card = page.locator('#project-lms');
+  await expect(card).toHaveClass(/is-linked/);
+  await expect(card).toBeInViewport();
+});

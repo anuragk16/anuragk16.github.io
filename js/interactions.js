@@ -12,11 +12,15 @@
     btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
   });
 
-  // Skills: hover or focus highlights the projects that prove them.
+  // Skills: hover or focus highlights the projects that prove them; click jumps to the first one.
   var projects = document.querySelectorAll('.project[data-project]');
+  var pinned = null;
+  var pinTimer = 0;
+  var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function link(skill, on) {
-    var ids = on ? (skill.getAttribute('data-projects') || '').split(/\s+/) : [];
-    skill.classList.toggle('is-active', on);
+    var active = on ? skill : pinned;
+    var ids = active ? (active.getAttribute('data-projects') || '').split(/\s+/) : [];
+    document.querySelectorAll('.skill').forEach(function (s) { s.classList.toggle('is-active', s === active); });
     projects.forEach(function (p) { p.classList.toggle('is-linked', ids.indexOf(p.getAttribute('data-project')) > -1); });
   }
   document.querySelectorAll('.skill').forEach(function (skill) {
@@ -24,6 +28,14 @@
     skill.addEventListener('mouseleave', function () { link(skill, false); });
     skill.addEventListener('focus', function () { link(skill, true); });
     skill.addEventListener('blur', function () { link(skill, false); });
+    skill.addEventListener('click', function () {
+      var first = document.getElementById('project-' + (skill.getAttribute('data-projects') || '').split(/\s+/)[0]);
+      pinned = skill;
+      link(skill, true);
+      clearTimeout(pinTimer);
+      pinTimer = setTimeout(function () { pinned = null; link(null, false); }, 4000);
+      if (first) first.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
+    });
   });
 
   // Earlier work: first three cards, then "Show more".

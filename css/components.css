@@ -67,6 +67,8 @@
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--ink); color: var(--bg); }
 .btn-ghost { color: var(--ink); border-color: var(--line); background: var(--card); }
+/* Clipped shapes would cut off an outside focus ring, so draw it inside. */
+.btn:focus-visible, .social a:focus-visible, .skill:focus-visible { outline: 3px solid var(--acc); outline-offset: -4px; }
 
 .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0; padding: 0; }
 .tags span {
@@ -147,7 +149,7 @@
 /* ---------- Skills ---------- */
 .skills { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
 .skill {
-  width: 100%; height: 100%; text-align: left; cursor: default;
+  width: 100%; height: 100%; text-align: left; cursor: pointer;
   display: flex; flex-direction: column; gap: .5rem;
   padding: var(--space-5); background: var(--card); border: 1px solid var(--line);
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
@@ -157,6 +159,8 @@
 .skill-name::before { content: "‹"; color: var(--acc); font-family: var(--font-sans); font-weight: 700; }
 .skill-line { color: var(--muted); font-size: .95rem; }
 .skill .tags { margin-top: auto; padding-top: .35rem; }
+.skill-used { font-size: .85rem; font-weight: 600; color: var(--acc); }
+.skill.is-active .skill-used { color: var(--bg); }
 .skill.is-active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .skill.is-active .skill-line { color: color-mix(in srgb, var(--bg) 75%, var(--ink)); }
 .skill.is-active .skill-name::before { color: var(--bg); }

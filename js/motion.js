@@ -26,6 +26,7 @@
   update();
 
   if (reduce) return;
+  document.documentElement.classList.add('motion');
 
   // 2. Split the headline into words (screen readers get the whole sentence).
   var h1 = document.querySelector('.hero-title');

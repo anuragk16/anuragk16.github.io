@@ -89,3 +89,21 @@ test('no-js shows all content', async ({ browser, baseURL }) => {
   expect(await page.locator('#earlier-list .mini:visible').count()).toBe(await page.locator('#earlier-list .mini').count());
   await ctx.close();
 });
+
+test('cards stay visible if motion.js fails to load', async ({ page }) => {
+  await page.route('**/js/motion.js', (r) => r.abort());
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  await page.locator('#project-lms').scrollIntoViewIfNeeded();
+  const clip = await page.locator('#project-lms').evaluate((e) => getComputedStyle(e).clipPath);
+  expect(clip).not.toContain('0px 0px, 0px 0px');
+});
+
+test('print shows cards and timeline dates', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  await page.emulateMedia({ media: 'print', reducedMotion: 'no-preference' });
+  const clip = await page.locator('#project-lms').evaluate((e) => getComputedStyle(e).clipPath);
+  expect(clip).not.toContain('0px 0px, 0px 0px');
+  await expect(page.locator('.timeline-when').last()).toHaveCSS('opacity', '1');
+});
