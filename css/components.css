@@ -115,7 +115,7 @@
 @media (max-width: 640px) { .proof-list { grid-template-columns: 1fr; } }
 
 /* ---------- Projects ---------- */
-.projects { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.projects { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: start; }
 .project {
   position: relative; background: var(--card); padding: clamp(1.25rem, 3vw, 2rem);
   clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);

@@ -89,3 +89,14 @@ test('clicking a skill scrolls to the work that proves it', async ({ page }) => 
   await expect(card).toHaveClass(/is-linked/);
   await expect(card).toBeInViewport();
 });
+
+test('opening one card does not stretch its neighbour', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'cards stack in one column on phones');
+  const field = page.locator('#project-field');
+  const before = (await field.boundingBox()).height;
+  await page.locator('#project-lms .project-toggle').click();
+  await expect(page.locator('#project-lms-details')).toBeVisible();
+  const after = (await field.boundingBox()).height;
+  expect(after).toBeCloseTo(before, 0);
+  await expect(page.locator('#project-field-details')).toBeHidden();
+});
