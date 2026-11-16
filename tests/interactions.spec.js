@@ -5,18 +5,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('project card expands and collapses', async ({ page }) => {
-  const toggle = page.locator('#project-field .project-toggle');
-  const details = page.locator('#project-field-details');
-  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
-  await expect(details).toBeHidden();
-  await toggle.click();
-  await expect(details).toBeVisible();
-  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-  await toggle.click();
-  await expect(details).toBeHidden();
-});
-
 test('skill highlights its projects', async ({ page, isMobile }) => {
   test.skip(isMobile, 'hover covered by focus test on touch');
   await page.locator('.skill[data-projects="field"]').hover();
@@ -42,10 +30,11 @@ test('keyboard operates all controls', async ({ page, isMobile }) => {
   await page.keyboard.press('Enter');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 
-  const toggle = page.locator('#project-cert .project-toggle');
-  await toggle.focus();
-  await page.keyboard.press('Space');
-  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await page.locator('#project-cert .project-open').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#case-study')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#case-study')).toBeHidden();
 
   await page.locator('.skill[data-projects="lms"]').focus();
   await expect(page.locator('#project-lms')).toHaveClass(/is-linked/);
@@ -90,17 +79,6 @@ test('clicking a skill scrolls to the work that proves it', async ({ page }) => 
   await expect(card).toBeInViewport();
 });
 
-test('opening one card does not stretch its neighbour', async ({ page, isMobile }) => {
-  test.skip(isMobile, 'cards stack in one column on phones');
-  const field = page.locator('#project-field');
-  const before = (await field.boundingBox()).height;
-  await page.locator('#project-lms .project-toggle').click();
-  await expect(page.locator('#project-lms-details')).toBeVisible();
-  const after = (await field.boundingBox()).height;
-  expect(after).toBeCloseTo(before, 0);
-  await expect(page.locator('#project-field-details')).toBeHidden();
-});
-
 test('side cards share a row on desktop', async ({ page, isMobile }) => {
   test.skip(isMobile, 'cards stack on phones');
   const f = await page.locator('#project-field').boundingBox();
@@ -109,39 +87,92 @@ test('side cards share a row on desktop', async ({ page, isMobile }) => {
   expect(l.x).toBeGreaterThan(f.x + f.width);
 });
 
-test('side card details open in one full-width panel below both cards', async ({ page, isMobile }) => {
-  test.skip(isMobile, 'desktop layout');
-  const grid = await page.locator('#work .projects').boundingBox();
-  const f0 = await page.locator('#project-field').boundingBox();
-  const l0 = await page.locator('#project-lms').boundingBox();
-  await page.locator('#project-field .project-toggle').click();
-  const panel = page.locator('#project-field-details');
-  await expect(panel).toBeVisible();
-  const pb = await panel.boundingBox();
-  expect(Math.abs(pb.x - grid.x)).toBeLessThan(1);
-  expect(Math.abs(pb.width - grid.width)).toBeLessThan(1);
-  const f1 = await page.locator('#project-field').boundingBox();
-  const l1 = await page.locator('#project-lms').boundingBox();
-  expect(pb.y).toBeGreaterThan(Math.max(f1.y + f1.height, l1.y + l1.height) - 1);
-  expect(f1.height).toBeCloseTo(f0.height, 0);
-  expect(l1.height).toBeCloseTo(l0.height, 0);
-  await expect(panel).toHaveAttribute('data-for', 'field');
+test('cards show a teaser and never change size', async ({ page }) => {
+  const sizes = async () => page.locator('#work .project').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)));
+  await page.evaluate(() => document.fonts.ready);
+  const before = await sizes();
+  for (const id of ['cert', 'field', 'lms']) {
+    await expect(page.locator(`#project-${id} .project-teaser`)).toBeVisible();
+    await expect(page.locator(`#project-${id}-details`)).toBeHidden();
+    await page.locator(`#project-${id} .project-open`).click();
+    await expect(page.locator('#case-study')).toBeVisible();
+    await page.locator('#case-study .case-close').click();
+    await expect(page.locator('#case-study')).toBeHidden();
+  }
+  const after = await sizes();
+  after.forEach((h, i) => expect(Math.abs(h - before[i])).toBeLessThanOrEqual(1));
 });
 
-test('only one side panel is open at a time', async ({ page }) => {
-  await page.locator('#project-field .project-toggle').click();
-  await page.locator('#project-lms .project-toggle').click();
-  await expect(page.locator('#project-lms-details')).toBeVisible();
-  await expect(page.locator('#project-field-details')).toBeHidden();
-  await expect(page.locator('#project-field .project-toggle')).toHaveAttribute('aria-expanded', 'false');
+test('case study shows the right project story', async ({ page }) => {
+  await page.locator('#project-lms .project-open').click();
+  const dlg = page.locator('#case-study');
+  await expect(dlg).toBeVisible();
+  await expect(dlg.locator('#case-study-title')).toHaveText('Health-worker training platform');
+  for (const label of ['Problem', 'What I did', 'Result']) await expect(dlg).toContainText(label);
+  await expect(dlg).toContainText('open-source LMS built on Frappe');
+  expect(await dlg.evaluate((d) => d.open && d.matches(':modal'))).toBe(true);
 });
 
-test('on phones a panel opens right below its own card', async ({ page, isMobile }) => {
-  test.skip(!isMobile, 'phone layout');
-  await page.locator('#project-field .project-toggle').click();
-  const card = await page.locator('#project-field').boundingBox();
-  const panel = await page.locator('#project-field-details').boundingBox();
-  const lms = await page.locator('#project-lms').boundingBox();
-  expect(panel.y).toBeGreaterThan(card.y + card.height - 1);
-  expect(panel.y).toBeLessThan(lms.y);
+test('case study closes with the cross, Escape and the blurred area', async ({ page }) => {
+  const dlg = page.locator('#case-study');
+  const open = () => page.locator('#project-field .project-open').click();
+
+  await open(); await expect(dlg).toBeVisible();
+  await page.locator('#case-study .case-close').click();
+  await expect(dlg).toBeHidden();
+
+  await open(); await expect(dlg).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dlg).toBeHidden();
+
+  await open(); await expect(dlg).toBeVisible();
+  const vp = page.viewportSize();
+  await page.mouse.click(4, vp.height - 4); // the blurred backdrop, outside the case study
+  await expect(dlg).toBeHidden();
+});
+
+test('clicking inside the case study does not close it', async ({ page }) => {
+  await page.locator('#project-field .project-open').click();
+  await page.locator('#case-study-title').click();
+  await expect(page.locator('#case-study')).toBeVisible();
+});
+
+test('focus returns to the card button after closing', async ({ page }) => {
+  const btn = page.locator('#project-field .project-open');
+  await btn.click();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('#case-study')).toBeHidden();
+  await expect(btn).toBeFocused();
+});
+
+test.describe('with motion', () => {
+  test.use({ reducedMotion: 'no-preference' });
+
+  test('case study grows out of its card and shrinks back into it', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.goto('/');
+    const card = page.locator('#project-field');
+    await card.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1000);
+    const cardBox = await card.boundingBox();
+    // first frame of opening: the case study sits over the card
+    const first = await page.evaluate(() => new Promise((res) => {
+      document.querySelector('#project-field .project-open').click();
+      requestAnimationFrame(() => requestAnimationFrame(() => { const r = document.getElementById('case-study').getBoundingClientRect(); res({ x: r.x, y: r.y, w: r.width, h: r.height }); }));
+    }));
+    const cx = first.x + first.w / 2, cy = first.y + first.h / 2;
+    expect(Math.abs(cx - (cardBox.x + cardBox.width / 2))).toBeLessThan(cardBox.width * 0.25);
+    expect(Math.abs(cy - (cardBox.y + cardBox.height / 2))).toBeLessThan(cardBox.height * 0.6);
+    await page.waitForTimeout(700);
+    const full = await page.locator('#case-study').boundingBox();
+    expect(full.width * full.height).toBeGreaterThan(first.w * first.h * 1.05);
+    // closing animates back over the card before the dialog closes
+    const closing = await page.evaluate(() => new Promise((res) => {
+      document.querySelector('#case-study .case-close').click();
+      setTimeout(() => { const d = document.getElementById('case-study'); const r = d.getBoundingClientRect(); res({ open: d.open, w: r.width, h: r.height }); }, 300);
+    }));
+    expect(closing.open).toBe(true);
+    expect(closing.w * closing.h).toBeLessThan(full.width * full.height);
+    await expect(page.locator('#case-study')).toBeHidden();
+  });
 });
