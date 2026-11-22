@@ -42,6 +42,7 @@
   .proj-head b { font-size: 10pt; font-weight: 600; }
   .proj-head .tag { font-size: 8.4pt; color: var(--acc); font-weight: 600; white-space: nowrap; }
   .stack { font-size: 8.4pt; color: var(--muted); }
+  .sub-h { margin: 1.4mm 0 0; font-size: 8.6pt; font-weight: 600; color: var(--acc); letter-spacing: .06em; text-transform: uppercase; }
   ul { margin: 1mm 0 0; padding-left: 4mm; }
   li { margin: 0 0 .55mm; }
   li::marker { color: var(--acc); }
@@ -50,6 +51,8 @@
   .skills dt { font-weight: 600; }
   .skills dd { margin: 0; color: var(--ink); }
 
+  .earlier { margin: 0; color: var(--muted); }
+  .earlier b { color: var(--ink); font-weight: 600; }
   .two { display: grid; grid-template-columns: 1.12fr 1fr; gap: 6mm; }
   .list { list-style: none; padding: 0; margin: 0; }
   .list li { margin-bottom: 1.1mm; }
@@ -69,7 +72,7 @@
       </svg>
       <div>
         <h1>Anurag Kumawat</h1>
-        <div class="role">Software Engineer · Project Lead</div>
+        <div class="role">Software Engineer</div>
       </div>
     </div>
     <div class="contact">
@@ -80,7 +83,7 @@
     </div>
   </header>
 
-  <p class="summary">Software engineer who builds products from zero and takes them to real users. At ColoredCow I helped build and launch three production systems across web, mobile and open source, and I now lead a national certification platform end to end — product direction, requirements, full-stack development, releases and AWS infrastructure.</p>
+  <p class="summary">Software engineer who builds products from zero and takes them to real users, with a fully AI-driven development lifecycle. At ColoredCow I helped build and launch three production systems, and now lead a national certification platform end to end, shipped through AI agents at every stage.</p>
 
   <section>
     <h2>Experience</h2>
@@ -94,11 +97,15 @@
       <div class="proj-head"><b>National certification platform · for an industry body</b><span class="tag">Project Lead · Mar 2026 – Present</span></div>
       <div class="stack">Django REST Framework · Celery · PostgreSQL · Next.js · TypeScript · AWS (ECS, RDS, S3) · GitHub Actions</div>
       <ul>
-        <li>Own the platform end to end: shape requirements and estimates with the client, plan releases, build features across backend and frontend, and run production on AWS.</li>
-        <li>Top contributor to the codebase — 1,600+ backend and 950+ frontend commits.</li>
+        <li>Own the platform end to end — requirements and estimates with the client, releases, full-stack features and production on AWS — and am its top contributor (1,600+ backend, 950+ frontend commits).</li>
         <li>Designed and shipped the full certification-renewal cycle: renewal windows, status tracking, scheduled reminders (Celery Beat), an admin dashboard and Excel exports.</li>
         <li>Built and maintain payment (Razorpay, webhooks) and ERP (ERPNext membership sync) integrations behind the certification workflow.</li>
-        <li>Run delivery with an AI-assisted workflow — planning, building and code-review agents, auto-generated tests, release checklists — and sped up the CI test job.</li>
+      </ul>
+      <p class="sub-h">AI-driven SDLC</p>
+      <ul>
+        <li>Ship every change through an agentic SDLC: requirement → AI brainstorm and spec → implementation plan → agent-built code with tests → automated checks → AI code review → UAT test run → production.</li>
+        <li>Built the project's Claude Code agents — business analyst, implementation planner, implementation executor and performance auditor — and co-built the PR-review and request-intake skills.</li>
+        <li>820+ commits co-authored with AI agents; AI-written tests, feature and UAT checklists on every release, and a faster CI test job.</li>
       </ul>
     </div>
 
@@ -134,21 +141,16 @@
       <dt>Languages</dt><dd>Python, JavaScript, TypeScript, SQL</dd>
       <dt>Backend</dt><dd>Django, Django REST Framework, Celery, Redis, PostgreSQL, MySQL, Flask, Frappe; Razorpay and ERPNext integrations</dd>
       <dt>Frontend &amp; mobile</dt><dd>Next.js, React, React Native, Tailwind CSS, HTML, CSS</dd>
-      <dt>Cloud &amp; delivery</dt><dd>AWS (ECS, RDS, S3), Docker, GitHub Actions, Git, automated testing, code review, release planning</dd>
-      <dt>AI &amp; data</dt><dd>AI agents in delivery, AI features in apps, LangChain, Pandas, NumPy, scikit-learn, TensorFlow, OpenCV</dd>
+      <dt>Cloud &amp; delivery</dt><dd>AWS (ECS, RDS, S3), Docker, GitHub Actions, Git, automated testing, code review</dd>
+      <dt>AI-driven SDLC</dt><dd>Claude Code, agentic workflows (spec → plan → execute → review), custom agents and skills, AI code review, AI-generated tests</dd>
+      <dt>AI &amp; data</dt><dd>AI features in apps, LangChain, Pandas, NumPy, scikit-learn, TensorFlow, OpenCV</dd>
     </dl>
   </section>
 
   <section class="two">
     <div>
       <h2>Earlier experience</h2>
-      <ul class="list">
-        <li><span class="t">Python Developer Intern</span> — Nagarjuna Tech Solutions <span class="s">· Oct 2024</span></li>
-        <li><span class="t">Machine Learning Intern</span> — Atharvo India <span class="s">· Aug – Sep 2024</span></li>
-        <li><span class="t">Data Science Intern</span> — Evoastra Ventures <span class="s">· Jun – Aug 2024</span></li>
-        <li><span class="t">Python Developer Intern</span> — TechnoHacks Edutech <span class="s">· Jun – Jul 2023</span></li>
-        <li><span class="t">Rajasthan IT-Day Hackathon</span> — Jaipur <span class="s">· Mar 2023</span></li>
-      </ul>
+      <p class="earlier"><b>Python Developer Intern</b>, Nagarjuna Tech Solutions (Oct 2024) · <b>Machine Learning Intern</b>, Atharvo India (Aug – Sep 2024) · <b>Data Science Intern</b>, Evoastra Ventures (Jun – Aug 2024) · <b>Python Developer Intern</b>, TechnoHacks Edutech (Jun – Jul 2023) · <b>Rajasthan IT-Day Hackathon</b>, Jaipur (Mar 2023)</p>
     </div>
     <div>
       <h2>Education</h2>
