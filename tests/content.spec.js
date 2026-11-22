@@ -93,3 +93,13 @@ test('project cards and panels have a card background', async ({ page }) => {
 test('footer shows only the copyright line', async ({ page }) => {
   await expect(page.locator('.site-footer p')).toHaveText('© 2026 Anurag Kumawat');
 });
+
+test('copy credits the team, not solo work', async ({ page }) => {
+  const body = await page.locator('body').innerText();
+  for (const solo of ["I've built three", 'I own the project', 'owning it end to end', 'Owning a product end to end']) {
+    expect(body, solo).not.toContain(solo);
+  }
+  await expect(page.locator('#hero .hero-lede')).toContainText('team');
+  const desc = await page.locator('meta[name="description"]').getAttribute('content');
+  expect(desc).toContain('team');
+});
