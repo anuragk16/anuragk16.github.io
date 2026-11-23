@@ -7,10 +7,11 @@ test.beforeEach(async ({ page }) => {
 
 test('skill highlights its projects', async ({ page, isMobile }) => {
   test.skip(isMobile, 'hover covered by focus test on touch');
-  await page.locator('.skill[data-projects="field"]').hover();
+  await page.locator('.skill[data-projects="field lms"]').hover();
   await expect(page.locator('#project-field')).toHaveClass(/is-linked/);
+  await expect(page.locator('#project-lms')).toHaveClass(/is-linked/);
   await expect(page.locator('#project-cert')).not.toHaveClass(/is-linked/);
-  await expect(page.locator('.skill[data-projects="field"]')).toHaveClass(/is-active/);
+  await expect(page.locator('.skill[data-projects="field lms"]')).toHaveClass(/is-active/);
 });
 
 test('earlier work show more', async ({ page }) => {
@@ -36,7 +37,7 @@ test('keyboard operates all controls', async ({ page, isMobile }) => {
   await page.keyboard.press('Escape');
   await expect(page.locator('#case-study')).toBeHidden();
 
-  await page.locator('.skill[data-projects="lms"]').focus();
+  await page.locator('.skill[data-projects="field lms"]').focus();
   await expect(page.locator('#project-lms')).toHaveClass(/is-linked/);
 
   await page.locator('#earlier-toggle').focus();
@@ -69,12 +70,12 @@ test('each skill says where it was used', async ({ page }) => {
   const skills = page.locator('#skills .skill');
   const n = await skills.count();
   for (let i = 0; i < n; i++) await expect(skills.nth(i).locator('.skill-used')).toContainText('Used in');
-  await expect(page.locator('.skill[data-projects="lms"] .skill-used')).toContainText('Health-worker training platform');
+  await expect(page.locator('.skill[data-projects="field lms"] .skill-used')).toContainText('Health-worker training platform');
 });
 
 test('clicking a skill scrolls to the work that proves it', async ({ page }) => {
-  await page.locator('.skill[data-projects="lms"]').click();
-  const card = page.locator('#project-lms');
+  await page.locator('.skill[data-projects="field lms"]').click();
+  const card = page.locator('#project-field');
   await expect(card).toHaveClass(/is-linked/);
   await expect(card).toBeInViewport();
 });

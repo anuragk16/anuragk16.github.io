@@ -103,3 +103,16 @@ test('copy credits the team, not solo work', async ({ page }) => {
   const desc = await page.locator('meta[name="description"]').getAttribute('content');
   expect(desc).toContain('team');
 });
+
+test('site matches the resume: capability-led hero, strengths, proof, journey', async ({ page }) => {
+  await expect(page.locator('#hero .eyebrow')).toContainText('Project Lead');
+  const lede = page.locator('#hero .hero-lede');
+  for (const w of ['domain', 'solution', 'AI-driven', 'team']) await expect(lede).toContainText(w);
+  const names = await page.locator('#skills .skill-name').allInnerTexts();
+  expect(names.slice(0, 4).map((n) => n.trim())).toEqual(['Client management', 'Solutioning', 'AI-driven SDLC', 'Delivery leadership']);
+  await expect(page.locator('#proof')).toContainText('455+');
+  await expect(page.locator('#proof')).toContainText('11+');
+  await expect(page.locator('#journey')).toContainText('2021 – 2025');
+  await expect(page.locator('#project-cert-details')).toContainText('Since March 2026');
+  await expect(page.locator('#skills .also')).toContainText('Django');
+});
