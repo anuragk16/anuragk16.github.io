@@ -25,7 +25,8 @@ test.describe('with motion', () => {
     });
     await page.goto('/');
     await page.evaluate(() => window.scrollTo(0, document.getElementById('proof').offsetTop - 200));
-    await expect(page.locator('.proof-num')).toHaveText('3', { timeout: 3000 });
+    await expect(page.locator('.proof-num').first()).toHaveText('3', { timeout: 3000 });
+    await expect(page.locator('.proof-num').nth(2)).toHaveText('455', { timeout: 3000 });
     const seen = await page.evaluate(() => window.__seen);
     expect(seen.some((v) => v === '0' || v === '1' || v === '2')).toBe(true);
   });
@@ -73,7 +74,7 @@ test('reduced motion shows all content', async ({ page }) => {
   await page.goto('/');
   const clips = await page.locator('.reveal').evaluateAll((els) => els.map((e) => getComputedStyle(e).clipPath));
   for (const c of clips) expect(c).not.toContain('0px 0px, 0px 0px');
-  await expect(page.locator('.proof-num')).toHaveText('3');
+  await expect(page.locator('.proof-num')).toHaveText(['3', '11', '455']);
   const anim = await page.locator('.site-nav .logo-a').evaluate((el) => getComputedStyle(el).animationName);
   expect(anim).toBe('none');
   await expect(page.locator('.timeline-step').first()).toHaveCSS('opacity', '1');
