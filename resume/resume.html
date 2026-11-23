@@ -13,12 +13,13 @@
   a { color: inherit; text-decoration: none; }
   h1, h2, h3, p { margin: 0; }
 
-  .head h1 { font-size: 22pt; font-weight: 700; letter-spacing: -.01em; line-height: 1.1; }
-  .head .title { margin-top: 1mm; font-size: 11pt; font-weight: 600; color: var(--acc); }
-  .head .contact { margin-top: 1.5mm; color: var(--muted); font-size: 9pt; }
+  .head { padding-bottom: 3mm; border-bottom: 2px solid var(--ink); }
+  .head h1 { font-size: 24pt; font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+  .head .title { margin-top: 1.2mm; font-size: 10.8pt; font-weight: 700; color: var(--acc); }
+  .head .contact { margin-top: 1.6mm; color: var(--muted); font-size: 8.5pt; white-space: nowrap; }
 
   section { margin-top: 4mm; }
-  h2 { font-size: 10.5pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--acc); padding-bottom: 1mm; border-bottom: 1px solid var(--line); margin-bottom: 2.2mm; break-after: avoid; }
+  h2 { font-size: 10.2pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); padding: 0 0 1mm 2.4mm; border-left: 3px solid var(--acc); border-bottom: 1px solid var(--line); margin-bottom: 2.2mm; break-after: avoid; }
 
   .summary p { margin-bottom: 1.5mm; }
 
@@ -31,13 +32,16 @@
   .job .dates { font-size: 9pt; color: var(--muted); white-space: nowrap; }
   .job .org { font-size: 9.4pt; color: var(--muted); margin-top: .3mm; break-after: avoid; }
   .role { margin-top: 2.2mm; }
-  .role h4 { margin: 0; font-size: 9.8pt; font-weight: 600; break-after: avoid; }
+  .role-line { display: flex; justify-content: space-between; gap: 6mm; align-items: baseline; break-after: avoid; }
+  .role h4 { margin: 0; font-size: 9.9pt; font-weight: 700; }
+  .role .when { font-size: 8.8pt; color: var(--muted); white-space: nowrap; }
   .role .ctx { font-size: 9pt; color: var(--muted); break-after: avoid; }
   .label { margin-top: 1.4mm; font-size: 8.8pt; font-weight: 600; color: var(--acc); break-after: avoid; }
-  ul { margin: .8mm 0 0; padding-left: 4.5mm; }
-  li { margin-bottom: .6mm; break-inside: avoid; }
-  li::marker { color: var(--acc); }
+  ul { margin: .8mm 0 0; padding-left: 3.6mm; list-style: none; }
+  li { margin-bottom: .6mm; break-inside: avoid; text-indent: -3mm; }
 
+
+  .nw { white-space: nowrap; }
   .ach li { margin-bottom: .8mm; }
   .proj { margin-bottom: 1.5mm; break-inside: avoid; }
   .proj b { font-weight: 600; }
@@ -48,14 +52,13 @@
 
 <div class="head">
   <h1>Anurag Kumawat</h1>
-  <p class="title">Software Engineer | Project Lead | Full-Stack Python &amp; JavaScript | AI-Driven SDLC</p>
-  <p class="contact">Rajasthan, India · <a href="mailto:anuragkumawat1603@gmail.com">anuragkumawat1603@gmail.com</a> · <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/">linkedin.com/in/anurag-kumawat-71b84721b</a> · <a href="https://github.com/anuragk16">github.com/anuragk16</a> · <a href="https://anuragk16.github.io/">anuragk16.github.io</a></p>
+  <p class="title">Software Engineer | Project Lead | <span class="nw">Full-Stack</span> Python &amp; JavaScript | <span class="nw">AI-Driven</span> SDLC</p>
+  <p class="contact"><a href="mailto:anuragkumawat1603@gmail.com">anuragkumawat1603@gmail.com</a> | <a href="https://anuragk16.github.io/">anuragk16.github.io</a> | <a href="https://www.linkedin.com/in/anurag-kumawat-71b84721b/">linkedin.com/in/anurag-kumawat-71b84721b</a> | <a href="https://github.com/anuragk16">github.com/anuragk16</a> | Rajasthan, India</p>
 </div>
 
 <section class="summary">
   <h2>Professional Summary</h2>
-  <p>Software engineer and project lead who builds products from zero and takes them to real users. Working in teams at ColoredCow, I have helped build and launch three production systems across web, mobile and open source. Today I lead a national certification platform used by hundreds of businesses — managing client requirements, sprint planning, estimates and releases while building across a Django, Celery, Next.js and AWS stack.</p>
-  <p>I work with an AI-driven software development lifecycle: requirements, specs, implementation plans, code, tests and reviews move through AI agents, with engineers owning judgement, architecture and quality.</p>
+  <p>Software engineer and project lead with <span class="nw">full-stack</span> Python and JavaScript experience, shipping production systems through an <span class="nw">AI-driven</span> software development lifecycle (SDLC). Part of the ColoredCow teams that built and launched three products from scratch. Now lead a national certification platform used by hundreds of businesses: accountable for the client relationship, requirements, sprints and releases, while building on Django, Celery, Next.js and AWS.</p>
 </section>
 
 <section class="skills">
@@ -63,22 +66,22 @@
   <p><b>Languages:</b> Python, JavaScript, TypeScript, SQL, HTML, CSS</p>
   <p><b>Backend:</b> Django, Django REST Framework, REST API design, Celery, Celery Beat, Redis, PostgreSQL, MySQL, Flask, Frappe</p>
   <p><b>Frontend &amp; Mobile:</b> Next.js, React, React Native, Tailwind CSS, responsive web</p>
-  <p><b>Cloud &amp; DevOps:</b> AWS (ECS, ECR, RDS, S3), Docker, Docker Compose, GitHub Actions, CI/CD</p>
+  <p><b>Cloud &amp; DevOps:</b> AWS (ECS on EC2, ECR, RDS, S3), Docker, Docker Compose, GitHub Actions, CI/CD</p>
   <p><b>Integrations:</b> payment gateway (Razorpay, webhooks), ERP (ERPNext), transactional email, PDF and Excel generation</p>
-  <p><b>Quality:</b> unit and integration testing (pytest), code review, UAT test plans, query optimisation, role-based access control (RBAC)</p>
-  <p><b>AI &amp; Data:</b> AI-driven SDLC, Claude Code, custom AI agents and skills, LLM features in apps, LangChain, Pandas, NumPy, scikit-learn, TensorFlow, OpenCV</p>
+  <p><b>Quality:</b> unit testing and integration testing (pytest), code review, UAT test plans, query optimisation, <span class="nw">role-based</span> access control (RBAC)</p>
+  <p><b>AI &amp; Data:</b> <span class="nw">AI-driven</span> SDLC, Claude Code, custom AI agents and skills, LLM features in apps, LangChain, Pandas, NumPy, <span class="nw">scikit-learn</span>, TensorFlow, OpenCV</p>
   <p><b>Leadership &amp; Delivery:</b> client and stakeholder communication, requirements and acceptance criteria, effort estimation, Agile sprints, release management, production support</p>
 </section>
 
 <section class="ach">
   <h2>Key Achievements</h2>
   <ul>
-    <li>Part of the founding team that took a national certification platform from an empty repository to production in about two months, with no spec and no existing system to copy; it is now used by hundreds of businesses.</li>
-    <li>Leading the same platform since March 2026: 11+ fortnightly sprints delivered, and about 45 merged pull requests a month on average.</li>
-    <li>455+ merged pull requests and the top contributor to the codebase, with 1,600+ backend and 950+ frontend commits.</li>
-    <li>Shipped with a fully AI-driven development lifecycle: 820+ commits co-authored with AI agents, plus custom agents for business analysis, planning, execution and performance auditing.</li>
-    <li>Designed and built a bulk data import system from scratch that runs reliably in production with real data.</li>
-    <li>Optimised reporting exports to a fixed number of database queries per request, however many rows they return.</li>
+    <li>• Took a national certification platform from an empty repository to production in about two months as part of the founding team, with no spec and no existing system to copy; it now serves hundreds of businesses.</li>
+    <li>• Lead delivery on the platform since March 2026: 11+ fortnightly sprints, about 45 merged pull requests a month, and 455+ merged pull requests overall.</li>
+    <li>• Top contributor to the codebase, with 1,600+ backend and 950+ frontend commits.</li>
+    <li>• Scoped, estimated and delivered a <span class="nw">multi-milestone</span> <span class="nw">certification-renewal</span> workflow, from client requirements and UAT demos to production.</li>
+    <li>• Run the project on an <span class="nw">AI-driven</span> SDLC: 820+ commits <span class="nw">co-authored</span> with AI agents, and custom agents for business analysis, planning, execution and performance audits.</li>
+    <li>• Cut reporting exports to a fixed number of database queries per request, and built a bulk data import system that runs reliably in production.</li>
   </ul>
 </section>
 
@@ -86,51 +89,52 @@
   <h2>Professional Experience</h2>
 
   <div class="job">
-    <div class="job-line"><h3>Project Lead &amp; Software Engineer</h3><span class="dates">May 2025 – Present</span></div>
-    <p class="org">ColoredCow · Joined May 2025 · Intern from Jul 2025 · Full-time from Oct 2025 · Project Lead from Mar 2026</p>
+    <div class="job-line"><h3>ColoredCow — Software Engineer and Project Lead</h3><span class="dates">May 2025 – Present</span></div>
+    <p class="org">Software consultancy · Joined May 2025, intern Jul – Sep 2025, <span class="nw">full-time</span> Software Engineer from Oct 2025, Project Lead from Mar 2026</p>
 
     <div class="role">
-      <h4>Project Lead — National Certification Platform</h4>
-      <p class="ctx">Mar 2026 – Present · Django REST Framework, Celery, Redis, PostgreSQL, Next.js, TypeScript, AWS, GitHub Actions</p>
+      <div class="role-line"><h4>Project Lead, ColoredCow — National Certification Platform</h4><span class="when">Mar 2026 – Present</span></div>
+      <p class="ctx">Django REST Framework, Celery, Redis, PostgreSQL, Next.js, TypeScript, AWS (ECS, RDS, S3), GitHub Actions</p>
       <p class="label">Leadership and delivery</p>
       <ul>
-        <li>Lead the platform with the team as the client's technology partner: turn client conversations into written requirements with acceptance criteria, estimate them in person-hours, and get approval before work starts.</li>
-        <li>Plan and run fortnightly sprints, set priorities with the client, and coordinate developers and a QA engineer through build, review, UAT and release.</li>
-        <li>Own releases and production support: feature and UAT checklists before each release, checks on production after deploy, and fixes for live issues and data corrections.</li>
-        <li>Propose product direction beyond the ticket queue, such as simpler registration, better usability and AI use cases, and take it to client decisions.</li>
-        <li>Keep the project easy to hand over: decisions, product context and technical documentation live in a shared repository, not in one person's head.</li>
+        <li>• Accountable for the client account day to day: run 2–4 client calls a month, demo work on UAT, and turn each conversation into written requirements with acceptance criteria and <span class="nw">person-hour</span> estimates approved before work starts.</li>
+        <li>• Plan fortnightly sprints and set priorities with the client; work with a QA engineer on a release check before every deploy.</li>
+        <li>• Own releases and production support: feature and UAT checklists, <span class="nw">post-deploy</span> checks on production, and fixes for live issues and data corrections.</li>
+        <li>• Shape product direction beyond the ticket queue (simpler registration, usability, AI use cases) and take proposals to client decisions.</li>
+        <li>• Keep the project easy to hand over: decisions, product context and technical docs live in a shared repository rather than in one person's head.</li>
       </ul>
       <p class="label">Engineering</p>
       <ul>
-        <li>Led the design and delivery of the certification-renewal cycle: renewal windows, status tracking, scheduled reminders with Celery Beat, an admin dashboard and Excel exports.</li>
-        <li>Built and maintain payment-gateway (Razorpay, webhooks) and ERP (ERPNext membership sync) integrations behind the certification workflow.</li>
-        <li>Built role-based permissions across the platform's admin and user roles, with tests for every grant and denial.</li>
-        <li>Improved performance by removing N+1 queries and adding query-budget tests to reports and admin lists, and sped up the CI test job.</li>
-        <li>Run production on AWS (ECS, RDS, S3) with Docker, including database migrations and deployments through GitHub Actions.</li>
+        <li>• Led the design and delivery of the <span class="nw">certification-renewal</span> cycle: renewal windows, status tracking, scheduled reminders (Celery Beat), an admin dashboard and Excel exports.</li>
+        <li>• Built and maintain <span class="nw">payment-gateway</span> (Razorpay, webhooks) and ERP (ERPNext membership sync) integrations behind the certification workflow.</li>
+        <li>• Built the renewal screens, admin dashboard cards and status filters in Next.js, React and TypeScript.</li>
+        <li>• Built <span class="nw">role-based</span> access control (RBAC) across the platform's admin and user roles, with tests for every grant and denial.</li>
+        <li>• Removed N+1 queries, added <span class="nw">query-budget</span> tests to reports and admin lists, and sped up the CI test job.</li>
+        <li>• Run production on AWS (ECS on EC2, RDS, S3) with Docker, including database migrations and GitHub Actions deployments.</li>
       </ul>
-      <p class="label">AI-driven SDLC</p>
+      <p class="label"><span class="nw">AI-driven</span> SDLC</p>
       <ul>
-        <li>Ship every change through an agentic SDLC: requirement → AI brainstorm and spec → implementation plan → agent-built code with tests → automated checks → AI code review → UAT test run → production.</li>
-        <li>Built the project's Claude Code agents (business analyst, implementation planner, implementation executor, performance auditor) and co-built the PR-review and request-intake skills.</li>
-      </ul>
-    </div>
-
-    <div class="role">
-      <h4>Software Engineer — Field-Operations Platform and Training LMS</h4>
-      <p class="ctx">Aug 2025 – Feb 2026 · React Native, React, Frappe</p>
-      <ul>
-        <li>Built the React Native mobile app for an education non-profit's field teams, with AI features, and contributed to the React web app.</li>
-        <li>Designed and built a bulk data import system from scratch that brings large amounts of existing data in reliably.</li>
-        <li>Customised and extended an open-source Frappe LMS for a health non-profit's training programme, shipping on top of an existing codebase instead of building one from zero.</li>
+        <li>• Ship every change through an agentic SDLC, from requirement to <span class="nw">AI-assisted</span> spec, implementation plan, code and tests written by AI agents, automated checks, AI code review, a UAT test run and production release.</li>
+        <li>• Built the project's Claude Code agents (business analyst, implementation planner, implementation executor, performance auditor) and <span class="nw">co-built</span> the <span class="nw">PR-review</span> and <span class="nw">request-intake</span> skills.</li>
       </ul>
     </div>
 
     <div class="role">
-      <h4>Software Engineer — National Certification Platform (initial build)</h4>
-      <p class="ctx">May 2025 – Jul 2025 · Django REST Framework, Next.js, PostgreSQL</p>
+      <div class="role-line"><h4>Software Engineer, ColoredCow — <span class="nw">Field-Operations</span> Platform and Training LMS</h4><span class="when">Aug 2025 – Feb 2026</span></div>
+      <p class="ctx">React Native, React, Frappe</p>
       <ul>
-        <li>Part of the team that built the platform from scratch and took it live in about two months.</li>
-        <li>Built features across the assessment, organisation and payment flows, and the dashboards for each type of user.</li>
+        <li>• Built the React Native mobile app for an education <span class="nw">non-profit</span>'s field teams, with AI features, and contributed to the React web app.</li>
+        <li>• Designed and built a bulk data import system from scratch that brings large amounts of existing data in reliably.</li>
+        <li>• Customised and extended an <span class="nw">open-source</span> Frappe LMS for a health <span class="nw">non-profit</span>'s training programme, shipping on top of an existing codebase instead of building one from zero.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-line"><h4>Software Engineer, ColoredCow — National Certification Platform (initial build)</h4><span class="when">May 2025 – Jul 2025</span></div>
+      <p class="ctx">Django REST Framework, Next.js, PostgreSQL</p>
+      <ul>
+        <li>• Part of the team that built the platform from scratch and took it live in about two months.</li>
+        <li>• Built features across the assessment, organisation and payment flows, and the dashboards for each type of user.</li>
       </ul>
     </div>
   </div>
@@ -139,7 +143,7 @@
     <div class="job-line"><h3>Python Developer Intern</h3><span class="dates">Oct 2024</span></div>
     <p class="org">Nagarjuna Tech Solutions, Bengaluru (remote)</p>
     <ul>
-      <li>Built Flask APIs backed by a SQL database, and a resume builder on the Gemini API that stores generated resumes in the database.</li>
+      <li>• Built Flask APIs backed by a SQL database, and a resume builder on the Gemini API that stores generated resumes in the database.</li>
     </ul>
   </div>
 
@@ -147,7 +151,7 @@
     <div class="job-line"><h3>Machine Learning Intern</h3><span class="dates">Aug 2024 – Sep 2024</span></div>
     <p class="org">Atharvo India, Bengaluru (remote)</p>
     <ul>
-      <li>Learned supervised learning and classification through daily sessions, and built a handwritten-digit classifier.</li>
+      <li>• Built a <span class="nw">handwritten-digit</span> classification model using supervised machine learning.</li>
     </ul>
   </div>
 
@@ -155,7 +159,7 @@
     <div class="job-line"><h3>Data Science Intern</h3><span class="dates">Jun 2024 – Aug 2024</span></div>
     <p class="org">Evoastra Ventures, Hyderabad (remote)</p>
     <ul>
-      <li>Collected data through web scraping, cleaned and analysed it, built machine-learning models to predict outcomes, and presented insights in Tableau.</li>
+      <li>• Collected data through web scraping, cleaned and analysed it, built <span class="nw">machine-learning</span> models to predict outcomes, and presented insights in Tableau.</li>
     </ul>
   </div>
 
@@ -163,14 +167,20 @@
     <div class="job-line"><h3>Python Developer Intern</h3><span class="dates">Jun 2023 – Jul 2023</span></div>
     <p class="org">TechnoHacks Edutech, Maharashtra (remote)</p>
     <ul>
-      <li>Built a resume parser, a language translator and small Python applications.</li>
+      <li>• Built a resume parser and a language translator in Python.</li>
     </ul>
   </div>
 </section>
 
 <section>
+  <h2>Education</h2>
+  <div class="job-line"><h3>B.Tech, Computer Science and Engineering</h3><span class="dates">2021 – 2025</span></div>
+  <p class="org">Government Engineering College, Ajmer</p>
+</section>
+
+<section>
   <h2>Projects</h2>
-  <div class="proj"><b>AI-Powered Learning App</b> (Rajasthan IT-Day Hackathon, Mar 2023) — hand-gesture and posture detection, maths quizzes and storytelling, built as a team. <span class="tech">Python, TensorFlow, OpenCV, scikit-learn.</span></div>
+  <div class="proj"><b><span class="nw">AI-Powered</span> Learning App</b> (Rajasthan <span class="nw">IT-Day</span> Hackathon, Mar 2023) — <span class="nw">hand-gesture</span> and posture detection, maths quizzes and storytelling, built as a team. <span class="tech">Python, TensorFlow, OpenCV, scikit-learn.</span></div>
   <div class="proj"><b>DevNavigator</b> — AI generator of personalised learning and project roadmaps. <span class="tech">Python, LangChain, Streamlit, MySQL.</span></div>
   <div class="proj"><b>Airline Review Analysis</b> (British Airways job simulation, Forage, Oct 2024) — review sentiment and booking prediction. <span class="tech">Python, web scraping, ML, Tableau.</span></div>
 </section>
